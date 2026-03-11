@@ -1,0 +1,1096 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DesafIA – Formación en Inteligencia Artificial y Automatización para Empresas. Entrenamos líderes y equipos en la adopción progresiva de IA."
+    />
+    <title>DesafIA – Formación en IA y Automatización para Empresas</title>
+    <!-- Set js-ready BEFORE first paint to prevent reveal flicker -->
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+    <header class="navbar" id="navbar">
+      <div class="container navbar__inner">
+        <a href="#inicio" class="navbar__logo" id="logo-link">
+          <img src="assets/imagenes/logo_desafia.png" alt="DesafIA Logo" class="navbar__logo-img" />
+        </a>
+        <nav
+          class="navbar__nav"
+          id="main-nav"
+          aria-label="Navegación principal"
+        >
+          <a href="#inicio" class="navbar__link">Inicio</a>
+          <a href="conocenos.html" class="navbar__link">Conócenos</a>
+          <a href="formacion.html" class="navbar__link">Formación</a>
+        </nav>
+        <a href="#contacto" class="btn btn--cyan navbar__cta" id="nav-cta"
+          >Contactar</a
+        >
+        <button
+          class="navbar__hamburger"
+          id="hamburger"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" role="menu">
+      <a href="#inicio" class="mobile-menu__link">Inicio</a>
+      <a href="conocenos.html" class="mobile-menu__link">Conócenos</a>
+      <a href="formacion.html" class="mobile-menu__link">Formación</a>
+      <a href="#contacto" class="btn btn--cyan mobile-menu__cta">Contactar</a>
+    </div>
+
+    <main>
+      <!-- ═══════════════════ HERO ═══════════════════ -->
+      <section class="hero" id="inicio" aria-labelledby="hero-heading">
+        <!-- Canvas animation -->
+        <canvas class="hero__canvas" id="canv" aria-hidden="true"></canvas>
+
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1 class="hero__title reveal" data-delay="100" id="hero-heading">
+              Formación en IA<br />
+              <span style="display:block; text-align:center; font-size:0.6em; line-height:1.2; margin:0.1em 0;">+</span>
+              Automatización<br />
+              <span class="gradient-emp">para Empresas</span>
+            </h1>
+          </div>
+
+          <div class="holo-card reveal" data-delay="300">
+            <h2>Transformación Operativa</h2>
+            <p>
+              Entrenamos líderes y equipos en la adopción progresiva de Inteligencia Artificial.<br class="break-lg" />
+              Desde Copilot hasta agentes autónomos, <strong>transformamos tu cultura organizacional.</strong>
+            </p>
+            <div class="hero__actions">
+              <a href="#formacion" class="btn btn--holo" id="hero-cta-primary">
+                Conoce nuestros programas
+              </a>
+              <a href="#contacto" class="btn btn--outline btn--lg holo-outline" id="hero-cta-secondary">
+                Hablar con un asesor
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ TRUST / SOCIAL PROOF ═══════════════════ -->
+      <section class="trust" id="conocenos" aria-labelledby="trust-heading">
+        <div class="container">
+          <div class="section-header reveal" style="text-align: center; margin-bottom: 2rem;">
+            <p class="trust__label" style="margin-bottom: 0.8rem; display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--primary-blue); background: rgba(65,105,225,0.08); padding: 0.4rem 1.2rem; border-radius: 999px; border: 1px solid rgba(65,105,225,0.15);">
+              Casos de Éxito
+            </p>
+            <h2 class="section-title" id="trust-heading" style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; color: var(--text-dark); margin: 0;">
+              Empresas que confían en nuestra <span class="gradient-text" style="display: inline-block;">metodología</span>
+            </h2>
+          </div>
+          <div class="scene reveal" data-delay="100">
+            <div class="a3d" style="--n: 16">
+              <img class="card" src="assets/trust/1.png" style="--i: 0" alt="Socio 1" />
+              <img class="card" src="assets/trust/2.png" style="--i: 1" alt="Socio 2" />
+              <img class="card" src="assets/trust/3.png" style="--i: 2" alt="Socio 3" />
+              <img class="card" src="assets/trust/4.png" style="--i: 3" alt="Socio 4" />
+              <img class="card" src="assets/trust/5.png" style="--i: 4" alt="Socio 5" />
+              <img class="card" src="assets/trust/6.png" style="--i: 5" alt="Socio 6" />
+              <img class="card" src="assets/trust/7.png" style="--i: 6" alt="Socio 7" />
+              <img class="card" src="assets/trust/8.png" style="--i: 7" alt="Socio 8" />
+              <!-- Duplicate set to form a continuous cylinder -->
+              <img class="card" src="assets/trust/1.png" style="--i: 8" alt="Socio 1" />
+              <img class="card" src="assets/trust/2.png" style="--i: 9" alt="Socio 2" />
+              <img class="card" src="assets/trust/3.png" style="--i: 10" alt="Socio 3" />
+              <img class="card" src="assets/trust/4.png" style="--i: 11" alt="Socio 4" />
+              <img class="card" src="assets/trust/5.png" style="--i: 12" alt="Socio 5" />
+              <img class="card" src="assets/trust/6.png" style="--i: 13" alt="Socio 6" />
+              <img class="card" src="assets/trust/7.png" style="--i: 14" alt="Socio 7" />
+              <img class="card" src="assets/trust/8.png" style="--i: 15" alt="Socio 8" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ VALUE PROPOSITION ═══════════════════ -->
+      <section class="value-prop" aria-labelledby="value-heading">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Nuestra Filosofía</span>
+            <h2 class="section-title" id="value-heading">
+              No nos centramos en la herramienta,<br />
+              sino en tu <span class="gradient-text">Productividad</span>
+            </h2>
+            <p class="section-desc">
+              La IA no es solo ChatGPT. Es una optimización real en todas las
+              áreas de tu negocio.
+            </p>
+          </div>
+
+          <div class="cards-grid cards-grid--4">
+            <article
+              class="value-card reveal"
+              data-delay="0"
+              id="card-marketing"
+            >
+              <div class="value-card__icon-wrap" aria-hidden="true">
+                <svg
+                  class="value-card__icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <h3 class="value-card__title">Marketing y Ventas</h3>
+              <p class="value-card__desc">
+                Aceleración de contenidos y análisis de datos de alta precisión
+                para impactar tus campañas.
+              </p>
+            </article>
+
+            <article
+              class="value-card reveal"
+              data-delay="100"
+              id="card-operaciones"
+            >
+              <div class="value-card__icon-wrap" aria-hidden="true">
+                <svg
+                  class="value-card__icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="3" />
+                  <path
+                    d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"
+                  />
+                  <path
+                    d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12a10 10 0 0 1 10-10 10 10 0 0 1 10 10z"
+                  />
+                </svg>
+              </div>
+              <h3 class="value-card__title">Operaciones</h3>
+              <p class="value-card__desc">
+                Automatización de tareas repetitivas y flujos inteligentes con
+                Make/n8n para tu equipo.
+              </p>
+            </article>
+
+            <article
+              class="value-card reveal"
+              data-delay="200"
+              id="card-finanzas"
+            >
+              <div class="value-card__icon-wrap" aria-hidden="true">
+                <svg
+                  class="value-card__icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="7" width="20" height="14" rx="2" />
+                  <path
+                    d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M12 12v4M10 14h4"
+                  />
+                </svg>
+              </div>
+              <h3 class="value-card__title">Finanzas</h3>
+              <p class="value-card__desc">
+                Reportes automatizados y predicciones financieras con modelos de
+                IA aplicados a tus datos.
+              </p>
+            </article>
+
+            <article class="value-card reveal" data-delay="300" id="card-cx">
+              <div class="value-card__icon-wrap" aria-hidden="true">
+                <svg
+                  class="value-card__icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+              <h3 class="value-card__title">Experiencia de Cliente</h3>
+              <p class="value-card__desc">
+                Respuestas hiper-personalizadas y eficientes que elevan la
+                satisfacción de tus clientes.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ PROGRAMAS ═══════════════════ -->
+      <section
+        class="programs"
+        id="formacion"
+        aria-labelledby="programs-heading"
+      >
+        <!-- Subtle bg decoration -->
+        <div class="programs__bg-blob" aria-hidden="true"></div>
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Oferta Formativa</span>
+            <h2 class="section-title" id="programs-heading">
+              Rutas de <span class="gradient-text">Aprendizaje</span>
+            </h2>
+          </div>
+
+          <div class="cards-grid cards-grid--3">
+            <article
+              class="program-card reveal"
+              data-delay="0"
+              id="prog-gerencia"
+            >
+              <div class="program-card__level" aria-hidden="true">C-Level</div>
+              <div class="program-card__icon-wrap" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <h3 class="program-card__title">IA para Alta Gerencia</h3>
+              <p class="program-card__audience">Directorios y Gerentes</p>
+              <p class="program-card__desc">
+                Enfoque estratégico para que los líderes tomen decisiones
+                informadas, adopten IA con visión de negocio y guíen la
+                transformación de sus organizaciones.
+              </p>
+              <a
+                href="#contacto"
+                class="program-card__link"
+                id="prog-link-gerencia"
+                >Saber más →</a
+              >
+            </article>
+
+            <article
+              class="program-card program-card--featured reveal"
+              data-delay="100"
+              id="prog-mandos"
+            >
+              <div class="program-card__badge">Más popular</div>
+              <div class="program-card__level" aria-hidden="true">
+                Mid-Level
+              </div>
+              <div class="program-card__icon-wrap" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" />
+                  <circle cx="4.5" cy="10.5" r="2.5" />
+                  <path d="M1 20c0-2.5 1.5-4.5 3.5-4.5" />
+                  <circle cx="19.5" cy="10.5" r="2.5" />
+                  <path d="M23 20c0-2.5-1.5-4.5-3.5-4.5" />
+                </svg>
+              </div>
+              <h3 class="program-card__title">IA para Mandos Medios</h3>
+              <p class="program-card__audience">Jefaturas y Subgerentes</p>
+              <p class="program-card__desc">
+                Implementación táctica de IA en su área. Aprenden a orquestar
+                herramientas, medir impacto y liderar el cambio cultural en sus
+                equipos.
+              </p>
+              <a
+                href="#contacto"
+                class="program-card__link"
+                id="prog-link-mandos"
+                >Saber más →</a
+              >
+            </article>
+
+            <article
+              class="program-card reveal"
+              data-delay="200"
+              id="prog-equipos"
+            >
+              <div class="program-card__level" aria-hidden="true">
+                Operativo
+              </div>
+              <div class="program-card__icon-wrap" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <polyline points="8 21 12 17 16 21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <h3 class="program-card__title">Automatización para Equipos</h3>
+              <p class="program-card__audience">Equipos Operativos</p>
+              <p class="program-card__desc">
+                Uso práctico de herramientas y flujos de automatización. Desde
+                prompts efectivos hasta integraciones con Make, n8n y otras
+                plataformas.
+              </p>
+              <a
+                href="#contacto"
+                class="program-card__link"
+                id="prog-link-equipos"
+                >Saber más →</a
+              >
+            </article>
+          </div>
+
+          <!-- CTA to detailed curriculum page -->
+          <div style="text-align:center; margin-top:3rem;">
+            <a href="formacion.html" class="btn btn--gradient btn--lg" id="btn-ver-temario">
+              Ver Temario Completo
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ CTA FINAL ═══════════════════ -->
+      <section class="cta-final" id="contacto" aria-labelledby="cta-heading">
+        <div class="cta-final__bg-blob" aria-hidden="true"></div>
+        <div class="container cta-final__inner">
+          <div class="cta-final__content reveal">
+            <span class="section-tag section-tag--light"
+              >¿Listo para el cambio?</span
+            >
+            <h2 class="cta-final__title" id="cta-heading">
+              ¿Listo para aumentar en un
+              <span class="gradient-text-light">55%</span>
+              la velocidad de tus tareas?
+            </h2>
+            <p class="cta-final__subtitle">
+              Da el primer paso hacia la transformación digital con IA.
+            </p>
+            <div class="cta-final__actions">
+              <a
+                href="mailto:andres@somosdesafia.cl"
+                class="btn btn--gradient btn--xl"
+                id="cta-final-btn"
+              >
+                Transforma tu organización hoy
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="footer" role="contentinfo">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <a href="#inicio" class="navbar__logo footer__logo">
+            <img src="assets/imagenes/logo_desafia.png" alt="DesafIA Logo" class="navbar__logo-img" />
+          </a>
+          <p class="footer__tagline">
+            Formación en IA y Automatización para Empresas
+          </p>
+        </div>
+        <div class="footer__contact">
+          <a
+            href="mailto:andres@somosdesafia.cl"
+            class="footer__link"
+            id="footer-email"
+            >andres@somosdesafia.cl</a
+          >
+          <a
+            href="https://www.linkedin.com/in/andreshidalgog"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__link"
+            id="footer-linkedin"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+              />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            LinkedIn: /andreshidalgog
+          </a>
+        </div>
+        <p class="footer__copy">
+          © 2024 DesafIA. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="animations.js"></script>
+    <script>
+      (function () {
+        const canvas = document.getElementById("canv");
+        if (!canvas) return;
+
+        const heroSection = document.getElementById("inicio");
+        const ctx = canvas.getContext("2d", { alpha: false });
+        if (!ctx) return;
+
+        const COLORS = {
+          bg: [5, 5, 16],
+          deep: [75, 0, 130],
+          blue: [65, 105, 225],
+          cyan: [0, 191, 255],
+          soft: [204, 204, 255],
+        };
+
+        const TAU = Math.PI * 2;
+        const state = {
+          width: 0,
+          height: 0,
+          dpr: 1,
+          centerX: 0,
+          centerY: 0,
+          radius: 0,
+          nodes: [],
+          edges: [],
+          pulses: [],
+          stars: [],
+          pulseClock: 0,
+          burstClock: 2.4,
+          pointerX: 0,
+          pointerY: 0,
+          targetPointerX: 0,
+          targetPointerY: 0,
+          motion: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0.45 : 1,
+          isMobile: window.matchMedia("(max-width: 900px)").matches,
+        };
+
+        let rafId = 0;
+        let lastTime = performance.now();
+        let resizeTimer = 0;
+
+        function clamp(value, min, max) {
+          return Math.max(min, Math.min(max, value));
+        }
+
+        function random(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+
+        function lerp(a, b, t) {
+          return a + (b - a) * t;
+        }
+
+        function rgba(rgb, alpha) {
+          return "rgba(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + "," + alpha + ")";
+        }
+
+        function dist3(a, b) {
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const dz = a.z - b.z;
+          return Math.sqrt(dx * dx + dy * dy + dz * dz);
+        }
+
+        function fibonacciPoint(index, total) {
+          if (total <= 1) return { x: 0, y: 0, z: 0 };
+          const t = index / (total - 1);
+          const y = 1 - t * 2;
+          const radius = Math.sqrt(Math.max(0, 1 - y * y));
+          const theta = Math.PI * (3 - Math.sqrt(5)) * index;
+          return {
+            x: Math.cos(theta) * radius,
+            y: y,
+            z: Math.sin(theta) * radius,
+          };
+        }
+
+        function nearestNodes(sourceId, candidates, nodes, limit, maxDistance) {
+          const source = nodes[sourceId];
+          const ranked = [];
+
+          for (let i = 0; i < candidates.length; i += 1) {
+            const targetId = candidates[i];
+            if (targetId === sourceId) continue;
+            const distance = dist3(source, nodes[targetId]);
+            if (typeof maxDistance === "number" && distance > maxDistance) continue;
+            ranked.push({ id: targetId, distance: distance });
+          }
+
+          ranked.sort(function (a, b) {
+            return a.distance - b.distance;
+          });
+
+          return ranked.slice(0, limit).map(function (item) {
+            return item.id;
+          });
+        }
+
+        function edgeColorByLayer(avgLayer) {
+          if (avgLayer >= 3.1) return COLORS.cyan;
+          if (avgLayer >= 2.1) return COLORS.blue;
+          return COLORS.soft;
+        }
+
+        function spawnPulse(edgeIndex, startProgress) {
+          if (!state.edges.length) return;
+
+          const idx = typeof edgeIndex === "number" ? edgeIndex : Math.floor(Math.random() * state.edges.length);
+          const roll = Math.random();
+          const color = roll < 0.5 ? COLORS.cyan : roll < 0.85 ? COLORS.blue : COLORS.soft;
+
+          state.pulses.push({
+            edgeIndex: idx,
+            progress: typeof startProgress === "number" ? startProgress : 0,
+            speed: random(0.34, 0.86) * state.motion,
+            radius: random(1.8, 3.8),
+            color: color,
+          });
+
+          if (state.pulses.length > 260) {
+            state.pulses.shift();
+          }
+        }
+
+        function buildStars() {
+          const areaFactor = clamp((state.width * state.height) / (1600 * 900), 0.6, 1.6);
+          const baseCount = state.isMobile ? 80 : 150;
+          const count = Math.round(baseCount * areaFactor);
+          const stars = [];
+
+          for (let i = 0; i < count; i += 1) {
+            const choice = Math.random();
+            const color = choice < 0.72 ? COLORS.soft : choice < 0.9 ? COLORS.cyan : COLORS.blue;
+            stars.push({
+              x: Math.random(),
+              y: Math.random(),
+              depth: random(0.28, 1),
+              size: random(0.35, 1.6),
+              phase: random(0, TAU),
+              twinkle: random(0.35, 1.4),
+              color: color,
+            });
+          }
+
+          state.stars = stars;
+        }
+
+        function buildNetwork() {
+          const density = state.isMobile ? 0.68 : 1;
+          const layers = [
+            { radius: 0.03, count: 1, size: 2.4, color: COLORS.soft },
+            { radius: 0.32, count: Math.max(10, Math.round(20 * density)), size: 1.75, color: COLORS.cyan },
+            { radius: 0.56, count: Math.max(18, Math.round(36 * density)), size: 1.4, color: COLORS.blue },
+            { radius: 0.82, count: Math.max(30, Math.round(58 * density)), size: 1.15, color: COLORS.soft },
+            { radius: 1.08, count: Math.max(40, Math.round(80 * density)), size: 0.95, color: COLORS.cyan },
+          ];
+
+          const nodes = [];
+          const layerBuckets = [];
+          let nodeId = 0;
+
+          for (let layerIndex = 0; layerIndex < layers.length; layerIndex += 1) {
+            const layer = layers[layerIndex];
+            const bucket = [];
+
+            for (let i = 0; i < layer.count; i += 1) {
+              const base = layer.count === 1
+                ? { x: 0, y: 0, z: 0 }
+                : fibonacciPoint(i + Math.random() * 0.2, layer.count);
+
+              const jitter = layerIndex === 0 ? 0 : (Math.random() - 0.5) * (0.14 / (layerIndex + 1));
+              const radius = layer.radius * (1 + jitter);
+
+              nodes.push({
+                id: nodeId,
+                layer: layerIndex,
+                x: base.x * radius,
+                y: base.y * radius,
+                z: base.z * radius,
+                baseSize: layer.size * random(0.86, 1.25),
+                phase: random(0, TAU),
+                twinkle: random(0.75, 1.25),
+                color: layer.color,
+                px: 0,
+                py: 0,
+                vis: 0,
+                renderSize: 1,
+              });
+
+              bucket.push(nodeId);
+              nodeId += 1;
+            }
+
+            layerBuckets.push(bucket);
+          }
+
+          const edges = [];
+          const edgeSet = new Set();
+
+          function addEdge(a, b, strength) {
+            if (a === b) return;
+            const key = a < b ? a + "-" + b : b + "-" + a;
+            if (edgeSet.has(key)) return;
+            edgeSet.add(key);
+
+            const avgLayer = (nodes[a].layer + nodes[b].layer) * 0.5;
+            edges.push({
+              a: a,
+              b: b,
+              strength: strength,
+              phase: Math.random(),
+              color: edgeColorByLayer(avgLayer),
+            });
+          }
+
+          for (let layer = 1; layer < layerBuckets.length; layer += 1) {
+            const current = layerBuckets[layer];
+            const previous = layerBuckets[layer - 1];
+
+            for (let i = 0; i < current.length; i += 1) {
+              const node = current[i];
+              const prevNearest = nearestNodes(node, previous, nodes, layer === 1 ? 1 : 2);
+              const sameNearest = nearestNodes(node, current, nodes, layer < 3 ? 2 : 3, 0.42 + layer * 0.26);
+
+              for (let p = 0; p < prevNearest.length; p += 1) {
+                addEdge(node, prevNearest[p], 0.84 - p * 0.22);
+              }
+
+              for (let s = 0; s < sameNearest.length; s += 1) {
+                if (Math.random() < 0.82) {
+                  addEdge(node, sameNearest[s], 0.44 + Math.random() * 0.22);
+                }
+              }
+            }
+
+            if (layer < layerBuckets.length - 1) {
+              const next = layerBuckets[layer + 1];
+              for (let i = 0; i < Math.min(current.length, next.length); i += 3) {
+                addEdge(current[i], next[(i * 7) % next.length], 0.42 + Math.random() * 0.2);
+              }
+            }
+          }
+
+          const outerNodes = layerBuckets.slice(2).flat();
+          const extraLinks = Math.floor(outerNodes.length * (state.isMobile ? 0.16 : 0.28));
+
+          for (let i = 0; i < extraLinks; i += 1) {
+            const a = outerNodes[Math.floor(Math.random() * outerNodes.length)];
+            const b = outerNodes[Math.floor(Math.random() * outerNodes.length)];
+            if (a === b) continue;
+            if (dist3(nodes[a], nodes[b]) < 1.05) {
+              addEdge(a, b, 0.36 + Math.random() * 0.24);
+            }
+          }
+
+          const core = layerBuckets[0][0];
+          const bridges = state.isMobile ? 8 : 14;
+          for (let i = 0; i < bridges; i += 1) {
+            const target = outerNodes[Math.floor(Math.random() * outerNodes.length)];
+            addEdge(core, target, 0.5 + Math.random() * 0.24);
+          }
+
+          state.nodes = nodes;
+          state.edges = edges;
+          state.pulses = [];
+          state.pulseClock = 0;
+          state.burstClock = random(1.8, 3.2);
+
+          const initialPulses = state.isMobile ? 14 : 24;
+          for (let i = 0; i < initialPulses; i += 1) {
+            spawnPulse(Math.floor(Math.random() * state.edges.length), Math.random());
+          }
+        }
+
+        function resizeCanvas(rebuildNetwork) {
+          state.isMobile = window.matchMedia("(max-width: 900px)").matches;
+          state.dpr = Math.min(window.devicePixelRatio || 1, 2);
+          state.width = window.innerWidth;
+          state.height = heroSection ? Math.max(window.innerHeight, heroSection.offsetHeight) : window.innerHeight;
+          state.centerX = state.width * 0.5;
+          state.centerY = state.height * 0.52;
+          state.radius = Math.min(state.width, state.height) * (state.isMobile ? 0.29 : 0.34);
+
+          canvas.width = Math.floor(state.width * state.dpr);
+          canvas.height = Math.floor(state.height * state.dpr);
+          canvas.style.width = state.width + "px";
+          canvas.style.height = state.height + "px";
+          ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+
+          buildStars();
+          if (rebuildNetwork || state.nodes.length === 0) {
+            buildNetwork();
+          }
+        }
+
+        function drawBackground(t) {
+          ctx.fillStyle = rgba(COLORS.bg, 1);
+          ctx.fillRect(0, 0, state.width, state.height);
+
+          const swingX = state.centerX + Math.sin(t * 0.22 * state.motion) * state.width * 0.14;
+          const swingY = state.centerY + Math.cos(t * 0.2 * state.motion) * state.height * 0.12;
+
+          const aura = ctx.createRadialGradient(
+            swingX,
+            swingY,
+            Math.min(state.width, state.height) * 0.08,
+            state.centerX,
+            state.centerY,
+            Math.max(state.width, state.height) * 0.75
+          );
+
+          aura.addColorStop(0, rgba(COLORS.blue, 0.27));
+          aura.addColorStop(0.34, rgba(COLORS.deep, 0.22));
+          aura.addColorStop(0.7, rgba(COLORS.cyan, 0.1));
+          aura.addColorStop(1, "rgba(5,5,16,0)");
+          ctx.fillStyle = aura;
+          ctx.fillRect(0, 0, state.width, state.height);
+
+          const beam = ctx.createLinearGradient(0, 0, state.width, state.height);
+          beam.addColorStop(0, "rgba(75,0,130,0.22)");
+          beam.addColorStop(0.52, "rgba(7,12,30,0.06)");
+          beam.addColorStop(1, "rgba(0,191,255,0.08)");
+          ctx.fillStyle = beam;
+          ctx.fillRect(0, 0, state.width, state.height);
+        }
+
+        function drawStars(t) {
+          for (let i = 0; i < state.stars.length; i += 1) {
+            const star = state.stars[i];
+            const x = star.x * state.width
+              + Math.sin(t * 0.24 * state.motion + star.phase) * (12 * star.depth)
+              + state.pointerX * 12 * star.depth;
+            const y = star.y * state.height
+              + Math.cos(t * 0.18 * state.motion + star.phase) * (8 * star.depth)
+              + state.pointerY * 8 * star.depth;
+            const flicker = (Math.sin(t * star.twinkle * state.motion + star.phase) + 1) * 0.5;
+            const alpha = (0.08 + flicker * 0.35) * star.depth;
+            const size = star.size * (0.65 + flicker * 0.7);
+
+            ctx.fillStyle = rgba(star.color, alpha);
+            ctx.beginPath();
+            ctx.arc(x, y, size, 0, TAU);
+            ctx.fill();
+          }
+        }
+
+        function projectNodes(t) {
+          const yaw = t * 0.24 * state.motion + state.pointerX * 0.45;
+          const pitch = Math.sin(t * 0.19 * state.motion) * 0.24 + state.pointerY * 0.22;
+          const cosY = Math.cos(yaw);
+          const sinY = Math.sin(yaw);
+          const cosX = Math.cos(pitch);
+          const sinX = Math.sin(pitch);
+
+          const networkCenterX = state.centerX + state.pointerX * 35;
+          const networkCenterY = state.centerY + state.pointerY * 24;
+
+          for (let i = 0; i < state.nodes.length; i += 1) {
+            const node = state.nodes[i];
+            const breathe = 1 + Math.sin(t * node.twinkle * state.motion + node.phase) * 0.05;
+
+            const x = node.x * breathe;
+            const y = node.y * breathe;
+            const z = node.z * breathe;
+
+            const xr = x * cosY - z * sinY;
+            const zr = x * sinY + z * cosY;
+            const yr = y * cosX - zr * sinX;
+            const zf = y * sinX + zr * cosX;
+
+            const vis = clamp((zf + 1.35) / 2.7, 0, 1);
+            const perspective = 0.62 + vis * 1.06;
+
+            node.px = networkCenterX + xr * state.radius * perspective;
+            node.py = networkCenterY + yr * state.radius * perspective * 0.9;
+            node.vis = vis;
+            node.renderSize = node.baseSize
+              * (0.78 + vis * 1.25)
+              * (0.92 + Math.sin(t * 1.3 * state.motion + node.phase) * 0.12);
+          }
+        }
+
+        function drawConnections(t) {
+          ctx.save();
+          ctx.lineCap = "round";
+
+          for (let i = 0; i < state.edges.length; i += 1) {
+            const edge = state.edges[i];
+            const a = state.nodes[edge.a];
+            const b = state.nodes[edge.b];
+            const depthMix = (a.vis + b.vis) * 0.5;
+            if (depthMix < 0.08) continue;
+
+            const shimmer = 0.82 + 0.18 * Math.sin(t * 2.2 * state.motion + edge.phase * TAU);
+            const alpha = (0.05 + depthMix * 0.24) * edge.strength * shimmer;
+            const width = (0.35 + depthMix * 1.2) * edge.strength;
+
+            ctx.strokeStyle = rgba(edge.color, alpha * 0.44);
+            ctx.lineWidth = width * 2.5;
+            ctx.beginPath();
+            ctx.moveTo(a.px, a.py);
+            ctx.lineTo(b.px, b.py);
+            ctx.stroke();
+
+            ctx.strokeStyle = rgba(edge.color, alpha);
+            ctx.lineWidth = width;
+            ctx.beginPath();
+            ctx.moveTo(a.px, a.py);
+            ctx.lineTo(b.px, b.py);
+            ctx.stroke();
+
+            if (edge.phase < 0.14) {
+              const flow = (t * 0.26 * state.motion + edge.phase * 1.7) % 1;
+              const hx = lerp(a.px, b.px, flow);
+              const hy = lerp(a.py, b.py, flow);
+              ctx.fillStyle = rgba(COLORS.cyan, depthMix * 0.22);
+              ctx.beginPath();
+              ctx.arc(hx, hy, 1.2 + depthMix * 1.6, 0, TAU);
+              ctx.fill();
+            }
+          }
+
+          ctx.restore();
+        }
+
+        function updateAndDrawPulses(dt) {
+          state.pulseClock += dt * (state.isMobile ? 7 : 12) * state.motion;
+          while (state.pulseClock >= 1) {
+            spawnPulse();
+            state.pulseClock -= 1;
+          }
+
+          state.burstClock -= dt * state.motion;
+          if (state.burstClock <= 0 && state.edges.length) {
+            const burstCount = state.isMobile ? 4 : 8;
+            const seedEdge = Math.floor(Math.random() * state.edges.length);
+            for (let i = 0; i < burstCount; i += 1) {
+              spawnPulse((seedEdge + i * 17) % state.edges.length, Math.random() * 0.25);
+            }
+            state.burstClock = random(1.8, 3.4);
+          }
+
+          ctx.save();
+          ctx.globalCompositeOperation = "lighter";
+
+          for (let i = state.pulses.length - 1; i >= 0; i -= 1) {
+            const pulse = state.pulses[i];
+            const edge = state.edges[pulse.edgeIndex];
+            if (!edge) {
+              state.pulses.splice(i, 1);
+              continue;
+            }
+
+            const a = state.nodes[edge.a];
+            const b = state.nodes[edge.b];
+            const depthMix = (a.vis + b.vis) * 0.5;
+            if (depthMix <= 0.05) continue;
+
+            pulse.progress += dt * pulse.speed;
+            if (pulse.progress >= 1.05) {
+              state.pulses.splice(i, 1);
+              continue;
+            }
+
+            const tailT = Math.max(0, pulse.progress - 0.08);
+            const x = lerp(a.px, b.px, pulse.progress);
+            const y = lerp(a.py, b.py, pulse.progress);
+            const tx = lerp(a.px, b.px, tailT);
+            const ty = lerp(a.py, b.py, tailT);
+
+            const fade = pulse.progress < 0.88 ? 1 : 1 - (pulse.progress - 0.88) / 0.17;
+            const alpha = clamp((0.18 + depthMix * 0.68) * fade, 0, 1);
+
+            ctx.strokeStyle = rgba(pulse.color, alpha * 0.52);
+            ctx.lineWidth = pulse.radius * (0.8 + depthMix * 1.2);
+            ctx.beginPath();
+            ctx.moveTo(tx, ty);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            const glowRadius = pulse.radius * (1.9 + depthMix * 2.1);
+            const glow = ctx.createRadialGradient(x, y, 0, x, y, glowRadius);
+            glow.addColorStop(0, rgba(pulse.color, alpha));
+            glow.addColorStop(0.45, rgba(pulse.color, alpha * 0.35));
+            glow.addColorStop(1, "rgba(0,0,0,0)");
+
+            ctx.fillStyle = glow;
+            ctx.beginPath();
+            ctx.arc(x, y, glowRadius, 0, TAU);
+            ctx.fill();
+          }
+
+          ctx.restore();
+        }
+
+        function drawCore(t) {
+          const x = state.centerX + state.pointerX * 26;
+          const y = state.centerY + state.pointerY * 18;
+          const pulse = 1 + Math.sin(t * 1.5 * state.motion) * 0.09;
+          const radius = state.radius * 0.12 * pulse;
+
+          const halo = ctx.createRadialGradient(x, y, 0, x, y, radius * 3.2);
+          halo.addColorStop(0, rgba(COLORS.cyan, 0.25));
+          halo.addColorStop(0.35, rgba(COLORS.blue, 0.18));
+          halo.addColorStop(1, "rgba(0,0,0,0)");
+          ctx.fillStyle = halo;
+          ctx.beginPath();
+          ctx.arc(x, y, radius * 3.2, 0, TAU);
+          ctx.fill();
+
+          const core = ctx.createRadialGradient(x, y, 0, x, y, radius);
+          core.addColorStop(0, rgba(COLORS.soft, 0.95));
+          core.addColorStop(0.35, rgba(COLORS.cyan, 0.68));
+          core.addColorStop(1, rgba(COLORS.blue, 0));
+          ctx.fillStyle = core;
+          ctx.beginPath();
+          ctx.arc(x, y, radius, 0, TAU);
+          ctx.fill();
+        }
+
+        function drawNodes() {
+          const sorted = state.nodes.slice().sort(function (a, b) {
+            return a.vis - b.vis;
+          });
+
+          ctx.save();
+          ctx.globalCompositeOperation = "lighter";
+
+          for (let i = 0; i < sorted.length; i += 1) {
+            const node = sorted[i];
+            const alpha = 0.12 + node.vis * 0.88;
+            const radius = node.renderSize * (node.layer === 0 ? 1.6 : 1);
+            if (radius <= 0.3) continue;
+
+            ctx.fillStyle = rgba(node.color, alpha * 0.22);
+            ctx.beginPath();
+            ctx.arc(node.px, node.py, radius * 2.4, 0, TAU);
+            ctx.fill();
+
+            ctx.fillStyle = rgba(node.color, alpha * 0.7);
+            ctx.beginPath();
+            ctx.arc(node.px, node.py, radius, 0, TAU);
+            ctx.fill();
+
+            ctx.fillStyle = rgba(COLORS.soft, alpha * 0.75);
+            ctx.beginPath();
+            ctx.arc(node.px, node.py, radius * 0.35, 0, TAU);
+            ctx.fill();
+          }
+
+          ctx.restore();
+        }
+
+        function render(now) {
+          const t = now * 0.001;
+          const dt = Math.min((now - lastTime) * 0.001, 0.05);
+          lastTime = now;
+
+          state.pointerX = lerp(state.pointerX, state.targetPointerX, 0.035);
+          state.pointerY = lerp(state.pointerY, state.targetPointerY, 0.035);
+
+          drawBackground(t);
+          drawStars(t);
+          projectNodes(t);
+          drawConnections(t);
+          updateAndDrawPulses(dt);
+          drawCore(t);
+          drawNodes();
+
+          rafId = window.requestAnimationFrame(render);
+        }
+
+        function onResize() {
+          clearTimeout(resizeTimer);
+          resizeTimer = window.setTimeout(function () {
+            resizeCanvas(true);
+          }, 120);
+        }
+
+        window.addEventListener("resize", onResize, { passive: true });
+        window.addEventListener("pointermove", function (event) {
+          if (!state.width || !state.height) return;
+          state.targetPointerX = clamp((event.clientX / state.width) * 2 - 1, -1, 1);
+          state.targetPointerY = clamp((event.clientY / state.height) * 2 - 1, -1, 1);
+        }, { passive: true });
+
+        window.addEventListener("blur", function () {
+          state.targetPointerX = 0;
+          state.targetPointerY = 0;
+        });
+
+        if (heroSection && "ResizeObserver" in window) {
+          const heroObserver = new ResizeObserver(function () {
+            onResize();
+          });
+          heroObserver.observe(heroSection);
+        }
+
+        const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+        if (typeof reducedMotionQuery.addEventListener === "function") {
+          reducedMotionQuery.addEventListener("change", function (event) {
+            state.motion = event.matches ? 0.45 : 1;
+          });
+        }
+
+        resizeCanvas(true);
+        if (rafId) window.cancelAnimationFrame(rafId);
+        rafId = window.requestAnimationFrame(render);
+      })();
+    </script>
+  </body>
+</html>

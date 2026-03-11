@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="El factor humano detrás de la Inteligencia Artificial. Conoce a los líderes de proyecto de DesafIA." />
+  <title>Conócenos - DesafIA</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Configuration to lock exact Brand Colors -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#4B0082',     /* Primary Dark */
+              blue: '#4169E1',     /* Primary Blue */
+              cyan: '#00BFFF',     /* Accent Cyan */
+              lavender: '#CCCCFF', /* Light Lavender */
+              white: '#FFFFFF',
+              subtle: '#F8FAFC'    /* Fondo sutil */
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Utilities */
+    .text-gradient-logo {
+      background: linear-gradient(to right, #4B0082, #00BFFF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .text-gradient-title {
+      background: linear-gradient(135deg, #4B0082, #4169E1, #00BFFF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .bg-gradient-cta {
+      background: linear-gradient(135deg, #4B0082, #4169E1);
+    }
+    
+    /* Hero Patterns */
+    .dot-pattern {
+      background-image: radial-gradient(rgba(75, 0, 130, 0.1) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    
+    /* Glassmorphism */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    
+    /* Particle canvas */
+    #particle-canvas {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgb(10, 10, 50) 0%, rgb(60, 10, 60) 100%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 font-sans antialiased overflow-x-hidden selection:bg-brand-cyan/30">
+
+  <!-- ==============================================
+       A. BARRA DE NAVEGACIÓN (HEADER)
+       ============================================== -->
+  <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100/50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="text-2xl font-black tracking-tight text-gradient-logo">DesafIA</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex gap-10 items-center font-semibold text-[15px]">
+        <a href="index.html" class="text-gray-500 hover:text-brand-blue transition-colors">Inicio</a>
+        
+        <!-- Active Link: Conócenos -->
+        <a href="conocenos.html" class="text-brand-dark relative">
+          Conócenos
+          <span class="absolute -bottom-1.5 left-0 w-full h-[3px] bg-brand-dark rounded-t-full"></span>
+        </a>
+        
+        <a href="formacion.html" class="text-gray-500 hover:text-brand-blue transition-colors">Formación</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <a href="index.html#contacto" class="inline-flex items-center justify-center bg-brand-cyan text-white px-7 py-2.5 rounded-full font-bold text-[15px] shadow-[0_4px_14px_rgba(0,191,255,0.35)] hover:bg-[#00a8e6] hover:-translate-y-0.5 transition-all">
+          Contactar
+        </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="md:hidden text-gray-900 focus:outline-none" aria-label="Abrir menú">
+        <svg width="24" height="24" fill="none" class="w-7 h-7" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==============================================
+       B. SECCIÓN HERO
+       ============================================== -->
+  <section class="relative min-h-[90vh] md:min-h-[100vh] flex items-center overflow-hidden">
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas" class="absolute inset-0 z-0"></canvas>
+    
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10 pt-20">
+      <h1 class="text-[3.25rem] md:text-[5rem] font-black tracking-tight leading-[1.05] text-white drop-shadow-lg">
+        El factor humano detrás de la <br class="hidden md:block"/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ccccff] to-brand-cyan">Inteligencia Artificial</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       C. MISIÓN Y VISIÓN
+       ============================================== -->
+  <section class="py-24 bg-brand-subtle relative z-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        
+        <!-- Tarjeta 1: Misión -->
+        <div class="relative overflow-hidden shadow-xl rounded-[2rem] p-10 md:p-14 hover:-translate-y-2 transition-all duration-500 group bg-white border border-gray-100">
+          <!-- Franja decorativa superior -->
+          <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-dark"></div>
+          <h2 class="text-[1.75rem] font-black text-gray-900 mb-5 tracking-tight">Nuestra Misión</h2>
+          <p class="text-[17px] text-gray-600 leading-[1.8] font-medium">
+            Acelerar la productividad y competitividad de las empresas mediante la implementación práctica, medible y segura de Inteligencia Artificial y automatización en sus procesos diarios, <strong class="text-brand-dark">priorizando siempre el impacto en el negocio</strong> por sobre la herramienta.
+          </p>
+        </div>
+
+        <!-- Tarjeta 2: Visión -->
+        <div class="relative overflow-hidden shadow-xl rounded-[2rem] p-10 md:p-14 hover:-translate-y-2 transition-all duration-500 group bg-white border border-gray-100">
+          <!-- Franja decorativa superior -->
+          <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-dark via-brand-blue to-brand-cyan"></div>
+          <h2 class="text-[1.75rem] font-black text-gray-900 mb-5 tracking-tight">Nuestra Visión</h2>
+          <p class="text-[17px] text-gray-600 leading-[1.8] font-medium">
+            Convertirnos en el socio estratégico líder en la región que redefina el estándar del trabajo corporativo, construyendo un futuro donde <strong class="text-brand-blue">la IA y el talento humano colaboren en perfecta sinergia</strong> para alcanzar su máximo potencial.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       D. NUESTRO EQUIPO
+       ============================================== -->
+  <section class="py-32 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Title -->
+      <div class="text-center mb-24">
+        <span class="text-sm font-bold tracking-[0.2em] text-brand-blue uppercase bg-brand-blue/5 border border-brand-blue/10 py-1.5 px-4 rounded-full inline-block mb-4">El Talento</span>
+        <h2 class="text-4xl md:text-[3rem] font-black text-gray-900 tracking-tight">Líderes de Proyecto</h2>
+      </div>
+      
+      <div class="flex flex-col gap-28 md:gap-40">
+        
+        <!-- Perfil 1: Andrés Hidalgo (Foto Izquierda, Texto Derecha) -->
+        <article class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+          <!-- Foto -->
+          <div class="w-full md:w-5/12">
+            <div class="relative w-full aspect-square rounded-[3rem] bg-brand-subtle overflow-hidden shadow-2xl shadow-brand-dark/15 group">
+              <!-- Círculo decorativo fondo -->
+              <div class="absolute inset-0 bg-brand-dark/5 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+              <!-- Placeholder de imagen -->
+              <img src="assets/imagenes/Andres.png" alt="Andrés Hidalgo" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+          <!-- Biografía -->
+          <div class="w-full md:w-7/12 flex flex-col items-start">
+            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 mb-3 tracking-tight">Andrés Hidalgo</h3>
+            <p class="text-brand-blue font-bold tracking-wider uppercase text-sm mb-8 border-b border-gray-100 pb-6 w-full max-w-lg">
+              Director de DesafIA | Consultor en Transformación Digital & IA
+            </p>
+            <div class="text-[17px] md:text-[16px] text-gray-700 leading-relaxed mb-10 text-justify md:text-left space-y-4">
+              <p>Ingeniero Civil Industrial UANDES, Diplomado en Estrategia de Negocios Digitales. Con más de 15 años de experiencia en transformación digital, automatización e inteligencia artificial aplicada a procesos de negocio, ha liderado proyectos en energía, banca, retail e industria.</p>
+              <p>Ha trabajado en empresas B2B como <strong class="text-gray-900">ENEX (Shell Chile)</strong>, desarrollando plataformas digitales y soluciones de fidelización, y en <strong class="text-gray-900">EMPACK</strong>, donde creó un área de automatización industrial que trabajó con compañías como Watts, SQM y Frusan.</p>
+              <p>Actualmente dirige programas de adopción de IA y automatización para empresas, con foco en procesos de negocio y productividad, más que en la herramienta tecnológica en sí. Ha impartido capacitaciones a directorios y gerencias en organizaciones como <strong class="text-gray-900">Transbank</strong>, mostrando el valor real de la IA en áreas como marketing, operaciones, finanzas y experiencia de cliente.</p>
+              <p>También es profesor en el Diplomado de Inteligencia Artificial Generativa de la Facultad de Ingeniería Civil de la Universidad de Los Andes, contribuyendo a formar profesionales en la aplicación práctica y estratégica de la IA.</p>
+            </div>
+            <a href="https://www.linkedin.com/in/andreshidalgog/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-[15px] hover:bg-brand-dark hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_20px_rgba(65,105,225,0.3)] hover:shadow-[0_12px_25px_rgba(75,0,130,0.4)]">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>Conectar en LinkedIn</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Perfil 2: Manuel Céspedes (Texto Izquierda, Foto Derecha) -->
+        <article class="flex flex-col md:flex-row-reverse items-center gap-12 lg:gap-24">
+          <!-- Foto -->
+          <div class="w-full md:w-5/12">
+            <div class="relative w-full aspect-square rounded-[3rem] bg-brand-subtle overflow-hidden shadow-2xl shadow-brand-blue/15 group">
+              <!-- Círculo decorativo fondo -->
+              <div class="absolute inset-0 bg-brand-blue/5 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+              <!-- Placeholder de imagen -->
+              <img src="assets/imagenes/Manuel.png" alt="Manuel Céspedes" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+          <!-- Biografía -->
+          <div class="w-full md:w-7/12 flex flex-col items-start md:items-end">
+            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 mb-3 tracking-tight">Manuel Céspedes</h3>
+            <p class="text-brand-blue font-bold tracking-wider uppercase text-sm mb-8 border-b border-gray-100 pb-6 w-full max-w-lg md:text-right">
+              Fundador de Altitud 100K | Director de Proyectos de IA Aplicada
+            </p>
+            <div class="text-[17px] md:text-[16px] text-gray-700 leading-relaxed mb-10 text-justify md:text-right space-y-4">
+              <p>Ingeniero en Proyectos y Licenciado en Ciencias de la Ingeniería de la Universidad Técnica Federico Santa María, Ingeniero en Mecánica Automotriz, Diplomado en Astronomía de la Universidad de Chile y MBA en Gestión Empresarial. Líder de iniciativas donde la tecnología y los datos se traducen en resultados concretos: mejoras de productividad, estandarización de procesos y toma de decisiones más rápida y precisa.</p>
+              <p>Actualmente desarrollo soluciones de IA aplicada para empresas, orientadas a automatizar tareas de alto volumen, mejorar calidad de entregables y habilitar equipos con capacidades prácticas. También impulso proyectos de I+D donde integro IA con tecnologías avanzadas (por ejemplo, análisis 3D y soporte a decisiones) en la empresa <strong class="text-gray-900">ALTITUD100K,SpA</strong>.</p>
+              <p>Soy capitán del USM CubeSat Team, campeón latinoamericano de construcción de nanosatélites, liderando un equipo multidisciplinario en el diseño, construcción y validación de sistemas espaciales bajo estándares exigentes. Esta experiencia fortaleció mi capacidad para ejecutar por hitos, gestionar stakeholders y resolver problemas complejos bajo presión, trasladando ese rigor a proyectos de negocio e innovación.</p>
+              <p>Realizo mentorías en iniciativas STEM, promoviendo liderazgo, pensamiento crítico y adopción responsable de tecnología. En estas clases, mi objetivo es que la IA quede instalada como una habilidad diaria: útil, segura y medible.</p>
+            </div>
+            <a href="https://www.linkedin.com/in/cespedes-araya-manuel/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center md:flex-row-reverse gap-3 bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-[15px] hover:bg-brand-dark hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_20px_rgba(65,105,225,0.3)] hover:shadow-[0_12px_25px_rgba(75,0,130,0.4)]">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>Conectar en LinkedIn</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       E. CALL TO ACTION (CTA)
+       ============================================== -->
+  <section class="py-28 bg-gradient-cta text-white text-center relative overflow-hidden">
+    <!-- Overlay Pattern -->
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-[0.25]"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <h2 class="text-4xl md:text-[3.25rem] font-black mb-6 tracking-tight leading-tight">
+        ¿Hablamos del futuro de tu empresa?
+      </h2>
+      <p class="text-[1.125rem] md:text-xl text-brand-lavender max-w-2xl mx-auto mb-12 leading-relaxed">
+        Nuestro equipo está listo para diseñar un plan de adopción de IA a la medida de tus desafíos operativos.
+      </p>
+      <a href="mailto:andres@somosdesafia.cl" class="group inline-flex items-center justify-center bg-brand-cyan text-gray-900 px-10 py-4 rounded-full font-black text-[1.1rem] hover:bg-white hover:text-brand-dark transition-all hover:-translate-y-1 shadow-[0_0_30px_rgba(0,191,255,0.4)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)]">
+        Agendar una reunión
+      </a>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       F. FOOTER
+       ============================================== -->
+  <footer class="bg-[#111118] text-gray-400 py-10 border-t border-white/5 text-center text-[15px] font-medium">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center gap-2 md:flex-row md:gap-4 text-gray-500">
+      <p>&copy; 2026 DesafIA. Todos los derechos reservados.</p>
+      <span class="hidden md:inline">|</span>
+      <a href="mailto:andres@somosdesafia.cl" class="hover:text-white transition-colors">andres@somosdesafia.cl</a>
+    </div>
+  </footer>
+
+  <script>
+    // modified version of random-normal
+    function normalPool(o){var r=0;do{var a=Math.round(normal({mean:o.mean,dev:o.dev}));if(a<o.pool.length&&a>=0)return o.pool[a];r++}while(r<100)}function randomNormal(o){if(o=Object.assign({mean:0,dev:1,pool:[]},o),Array.isArray(o.pool)&&o.pool.length>0)return normalPool(o);var r,a,n,e,l=o.mean,t=o.dev;do{r=(a=2*Math.random()-1)*a+(n=2*Math.random()-1)*n}while(r>=1);return e=a*Math.sqrt(-2*Math.log(r)/r),t*e+l}
+
+    const NUM_PARTICLES = 600;
+    const PARTICLE_SIZE = 0.5; // View heights
+    const SPEED = 20000; // Milliseconds
+
+    let particles = [];
+
+    function rand(low, high) {
+      return Math.random() * (high - low) + low;
+    }
+
+    function createParticle(canvas) {
+      const colour = {
+        r: 255,
+        g: randomNormal({ mean: 125, dev: 20 }),
+        b: 50,
+        a: rand(0, 1),
+      };
+      return {
+        x: -2,
+        y: -2,
+        diameter: Math.max(0, randomNormal({ mean: PARTICLE_SIZE, dev: PARTICLE_SIZE / 2 })),
+        duration: randomNormal({ mean: SPEED, dev: SPEED * 0.1 }),
+        amplitude: randomNormal({ mean: 16, dev: 2 }),
+        offsetY: randomNormal({ mean: 0, dev: 10 }),
+        arc: Math.PI * 2,
+        startTime: performance.now() - rand(0, SPEED),
+        colour: `rgba(${colour.r}, ${colour.g}, ${colour.b}, ${colour.a})`,
+      }
+    }
+
+    function moveParticle(particle, canvas, time) {
+      const progress = ((time - particle.startTime) % particle.duration) / particle.duration;
+      return {
+        ...particle,
+        x: progress,
+        y: ((Math.sin(progress * particle.arc) * particle.amplitude) + particle.offsetY),
+      };
+    }
+
+    function drawParticle(particle, canvas, ctx) {
+      const vh = canvas.height / 100;
+
+      ctx.fillStyle = particle.colour;
+      ctx.beginPath();
+      ctx.ellipse(
+        particle.x * canvas.width,
+        particle.y * vh + (canvas.height / 2),
+        particle.diameter * vh,
+        particle.diameter * vh,
+        0,
+        0,
+        2 * Math.PI
+      );
+      ctx.fill();
+    }
+
+    function draw(time, canvas, ctx) {
+      // Move particles
+      particles.forEach((particle, index) => {
+        particles[index] = moveParticle(particle, canvas, time);
+      })
+
+      // Clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw the particles
+      particles.forEach((particle) => {
+        drawParticle(particle, canvas, ctx);
+      })
+
+      // Schedule next frame
+      requestAnimationFrame((time) => draw(time, canvas, ctx));
+    }
+
+    function initializeCanvas() {
+      let canvas = document.getElementById('particle-canvas');
+      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+      let ctx = canvas.getContext("2d");
+
+      window.addEventListener('resize', () => {
+        canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+        canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+        ctx = canvas.getContext("2d");
+      })
+
+      return [canvas, ctx];
+    }
+
+    function startAnimation() {
+      const canvasEl = document.getElementById('particle-canvas');
+      if (!canvasEl) return;
+      const [canvas, ctx] = initializeCanvas();
+
+      // Create a bunch of particles
+      for (let i = 0; i < NUM_PARTICLES; i++) {
+        particles.push(createParticle(canvas));
+      }
+      
+      requestAnimationFrame((time) => draw(time, canvas, ctx));
+    };
+
+    // Start animation when document is loaded
+    (function () {
+      if (document.readyState !== 'loading') {
+        startAnimation();
+      } else {
+        document.addEventListener('DOMContentLoaded', () => {
+          startAnimation();
+        })
+      }
+    }());
+  </script>
+</body>
+</html>
