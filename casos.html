@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DesafIA – Casos de éxito en implementación de IA y Automatización para empresas." />
+  <title>Casos – DesafIA</title>
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="casos.css" />
+</head>
+<body>
+  <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" id="logo-link">
+        <img src="assets/imagenes/logo_desafia.png" alt="DesafIA Logo" class="navbar__logo-img" />
+      </a>
+      <nav class="navbar__nav" id="main-nav" aria-label="Navegación principal">
+        <a href="equipo.html" class="navbar__link">Equipo</a>
+        <a href="formacion.html" class="navbar__link">Programas</a>
+        <a href="casos.html" class="navbar__link navbar__link--active" aria-current="page">Casos</a>
+        <a href="index.html#contacto" class="navbar__link">Contactar</a>
+      </nav>
+      <a href="https://calendly.com/andres-somosdesafia" target="_blank" rel="noopener" class="btn btn--cta-primary navbar__cta" id="nav-cta">Agendar reunión</a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="equipo.html" class="mobile-menu__link">Equipo</a>
+    <a href="formacion.html" class="mobile-menu__link">Programas</a>
+    <a href="casos.html" class="mobile-menu__link">Casos</a>
+    <a href="index.html#contacto" class="mobile-menu__link">Contactar</a>
+    <a href="https://calendly.com/andres-somosdesafia" target="_blank" rel="noopener" class="btn btn--cta-primary mobile-menu__cta">Agendar reunión</a>
+  </div>
+
+  <main>
+    <!-- ═══════════════════ CASOS HERO SLIDESHOW ═══════════════════ -->
+    <section data-slideshow="wrap" class="casos-hero is--loading is--hidden">
+
+      <!-- Fullscreen Slider (revealed after loading) -->
+      <div class="casos-hero__slider">
+        <div class="casos-hero__slider-list">
+          <div data-slideshow="slide" class="casos-hero__slide is--current">
+            <img class="casos-hero__slide-img" src="assets/imagenes_casos/transbank.jpeg" alt="Caso Transbank" data-slideshow="parallax" draggable="false">
+          </div>
+          <div data-slideshow="slide" class="casos-hero__slide">
+            <img class="casos-hero__slide-img" src="assets/imagenes_casos/uandes1.jpeg" alt="Caso Universidad de los Andes" data-slideshow="parallax" draggable="false">
+          </div>
+          <div data-slideshow="slide" class="casos-hero__slide">
+            <img class="casos-hero__slide-img" src="assets/imagenes_casos/blumar.png" alt="Caso Blumar" data-slideshow="parallax" draggable="false">
+          </div>
+          <div data-slideshow="slide" class="casos-hero__slide">
+            <img class="casos-hero__slide-img" src="assets/imagenes_casos/INELCOM1.jpeg" alt="Caso Inelcom" data-slideshow="parallax" draggable="false">
+          </div>
+          <div data-slideshow="slide" class="casos-hero__slide">
+            <img class="casos-hero__slide-img" src="assets/imagenes_casos/seidor.png" alt="Caso Seidor" data-slideshow="parallax" draggable="false">
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading Animation -->
+      <div class="casos-loader">
+        <div class="casos-loader__wrap">
+          <div class="casos-loader__groups">
+            <!-- Duplicate group (absolute, scrolls behind) -->
+            <div class="casos-loader__group is--duplicate">
+              <div class="casos-loader__single"><div class="casos-loader__media"><img loading="eager" src="assets/imagenes_casos/INELCOM1.jpeg" alt="Inelcom" class="casos-loader__img"></div></div>
+              <div class="casos-loader__single"><div class="casos-loader__media"><img loading="eager" src="assets/imagenes_casos/seidor.png" alt="Seidor" class="casos-loader__img"></div></div>
+              <div class="casos-loader__single"><div class="casos-loader__media"><img loading="eager" src="assets/imagenes_casos/transbank.jpeg" alt="Transbank" class="casos-loader__img"></div></div>
+              <div class="casos-loader__single"><div class="casos-loader__media"><img loading="eager" src="assets/imagenes_casos/uandes1.jpeg" alt="U. Andes" class="casos-loader__img"></div></div>
+              <div class="casos-loader__single"><div class="casos-loader__media"><img loading="eager" src="assets/imagenes_casos/blumar.png" alt="Blumar" class="casos-loader__img"></div></div>
+            </div>
+            <!-- Relative group (scale transforms) -->
+            <div class="casos-loader__group is--relative">
+              <div class="casos-loader__single"><div class="casos-loader__media"><img loading="eager" src="assets/imagenes_casos/INELCOM1.jpeg" alt="Inelcom" class="casos-loader__img is--scale-down"></div></div>
+              <div class="casos-loader__single"><div class="casos-loader__media"><img loading="eager" src="assets/imagenes_casos/seidor.png" alt="Seidor" class="casos-loader__img is--scale-down"></div></div>
+              <div class="casos-loader__single"><div class="casos-loader__media is--scaling is--radius"><img loading="eager" src="assets/imagenes_casos/transbank.jpeg" alt="Transbank" class="casos-loader__img"></div></div>
+              <div class="casos-loader__single"><div class="casos-loader__media"><img loading="eager" src="assets/imagenes_casos/uandes1.jpeg" alt="U. Andes" class="casos-loader__img is--scale-down"></div></div>
+              <div class="casos-loader__single"><div class="casos-loader__media"><img loading="eager" src="assets/imagenes_casos/blumar.png" alt="Blumar" class="casos-loader__img is--scale-down"></div></div>
+            </div>
+          </div>
+          <div class="casos-loader__fade"></div>
+          <div class="casos-loader__fade is--duplicate"></div>
+        </div>
+      </div>
+
+      <!-- Content overlay -->
+      <div class="casos-hero__content">
+        <div class="casos-hero__top"></div>
+        <div class="casos-hero__center">
+          <h1 class="casos-hero__h1">Casos de Éxito</h1>
+        </div>
+        <div class="casos-hero__bottom">
+          <!-- Slide captions -->
+          <div class="casos-hero__captions">
+            <div class="casos-hero__caption is--active" data-caption="0">
+              <h2>Transbank</h2>
+              <p>Taller de IA para equipos de innovación y tecnología en la principal procesadora de pagos de Chile.</p>
+            </div>
+            <div class="casos-hero__caption" data-caption="1">
+              <h2>Universidad de los Andes</h2>
+              <p>Capacitación en herramientas de IA para docentes y equipos administrativos de la universidad.</p>
+            </div>
+            <div class="casos-hero__caption" data-caption="2">
+              <h2>Blumar</h2>
+              <p>Formación en automatización e IA aplicada a la gestión operacional de la industria acuícola.</p>
+            </div>
+            <div class="casos-hero__caption" data-caption="3">
+              <h2>Inelcom</h2>
+              <p>Implementación de talleres prácticos de IA para equipos de ingeniería y gestión de proyectos.</p>
+            </div>
+            <div class="casos-hero__caption" data-caption="4">
+              <h2>Seidor</h2>
+              <p>Programa de adopción de IA para consultores y equipos de transformación digital.</p>
+            </div>
+          </div>
+          <!-- Thumbnail navigation -->
+          <div class="casos-hero__nav">
+            <div data-slideshow="thumb" class="casos-hero__thumb is--current">
+              <img loading="eager" src="assets/imagenes_casos/transbank.jpeg" alt="Transbank" class="casos-hero__thumb-img">
+              <span class="casos-hero__thumb-label">Transbank</span>
+            </div>
+            <div data-slideshow="thumb" class="casos-hero__thumb">
+              <img loading="eager" src="assets/imagenes_casos/uandes1.jpeg" alt="U. Andes" class="casos-hero__thumb-img">
+              <span class="casos-hero__thumb-label">U. Andes</span>
+            </div>
+            <div data-slideshow="thumb" class="casos-hero__thumb">
+              <img loading="eager" src="assets/imagenes_casos/blumar.png" alt="Blumar" class="casos-hero__thumb-img">
+              <span class="casos-hero__thumb-label">Blumar</span>
+            </div>
+            <div data-slideshow="thumb" class="casos-hero__thumb">
+              <img loading="eager" src="assets/imagenes_casos/INELCOM1.jpeg" alt="Inelcom" class="casos-hero__thumb-img">
+              <span class="casos-hero__thumb-label">Inelcom</span>
+            </div>
+            <div data-slideshow="thumb" class="casos-hero__thumb">
+              <img loading="eager" src="assets/imagenes_casos/seidor.png" alt="Seidor" class="casos-hero__thumb-img">
+              <span class="casos-hero__thumb-label">Seidor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ GALLERY SECTION ═══════════════════ -->
+    <section class="casos-gallery">
+      <div class="container">
+        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
+          <span class="section-tag reveal">Más experiencias</span>
+          <h2 class="section-title reveal" style="color:var(--text-dark);">Galería de proyectos</h2>
+          <p class="section-desc reveal">Cada proyecto es una historia de transformación en equipos reales.</p>
+        </div>
+        <div class="casos-gallery__grid">
+          <a href="#" class="casos-gallery__card reveal">
+            <img src="assets/imagenes_casos/hub_lo_barnechea.jpeg" alt="Hub Lo Barnechea" class="casos-gallery__img">
+            <div class="casos-gallery__overlay">
+              <h3>Hub Lo Barnechea</h3>
+              <p>Charla abierta sobre IA y productividad para emprendedores y pymes del sector.</p>
+            </div>
+          </a>
+          <a href="#" class="casos-gallery__card reveal" data-delay="100">
+            <img src="assets/imagenes_casos/uandesdiplomado.png" alt="Diplomado U. Andes" class="casos-gallery__img">
+            <div class="casos-gallery__overlay">
+              <h3>Diplomado U. Andes</h3>
+              <p>Módulo de IA generativa dentro del diplomado de innovación de la universidad.</p>
+            </div>
+          </a>
+          <a href="#" class="casos-gallery__card reveal" data-delay="200">
+            <img src="assets/imagenes_casos/INELCOM2.jpeg" alt="Inelcom – Fase 2" class="casos-gallery__img">
+            <div class="casos-gallery__overlay">
+              <h3>Inelcom – Fase 2</h3>
+              <p>Segunda etapa de formación avanzada en automatización para equipos operativos.</p>
+            </div>
+          </a>
+          <a href="#" class="casos-gallery__card reveal" data-delay="300">
+            <img src="assets/imagenes_casos/uandes2.jpeg" alt="U. Andes – Equipos" class="casos-gallery__img">
+            <div class="casos-gallery__overlay">
+              <h3>U. Andes – Equipos</h3>
+              <p>Talleres de IA para equipos multidisciplinarios de la facultad de ingeniería.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ CTA ═══════════════════ -->
+    <section class="casos-cta">
+      <div class="container" style="text-align:center;">
+        <span class="section-tag section-tag--light reveal">Próximo paso</span>
+        <h2 class="section-title reveal" style="color:#fff; margin-bottom:1rem;">Tu empresa puede ser el próximo caso</h2>
+        <p class="reveal" style="color:rgba(255,255,255,0.7); max-width:520px; margin:0 auto 2.5rem; font-size:1.05rem; line-height:1.7;">
+          Conversemos sobre cómo la IA puede transformar la productividad de tu equipo.
+        </p>
+        <a href="https://calendly.com/andres-somosdesafia" target="_blank" rel="noopener" class="btn btn--cta-primary reveal" style="display:inline-block;">
+          Agendar reunión
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="navbar__logo footer__logo">
+        <img src="assets/imagenes/logo_desafia.png" alt="DesafIA Logo" class="navbar__logo-img" />
+      </a>
+      <p class="footer__tagline">Formación en IA y Automatización para Empresas</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
+  <script src="casos.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

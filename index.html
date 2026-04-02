@@ -1,0 +1,1138 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DesafIA – Formación en Inteligencia Artificial y Automatización para Empresas. Entrenamos líderes y equipos en la adopción progresiva de IA."
+    />
+    <title>DesafIA – Formación en IA y Automatización para Empresas</title>
+    <!-- Set js-ready BEFORE first paint to prevent reveal flicker -->
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+    <header class="navbar" id="navbar">
+      <div class="container navbar__inner">
+        <a href="#inicio" class="navbar__logo" id="logo-link">
+          <img src="assets/imagenes/logo_desafia.png" alt="DesafIA Logo" class="navbar__logo-img" />
+        </a>
+        <nav
+          class="navbar__nav"
+          id="main-nav"
+          aria-label="Navegación principal"
+        >
+          <a href="equipo.html" class="navbar__link">Equipo</a>
+          <a href="formacion.html" class="navbar__link">Programas</a>
+          <a href="casos.html" class="navbar__link">Casos</a>
+          <a href="#contacto" class="navbar__link">Contactar</a>
+        </nav>
+        <a href="https://calendly.com/andres-somosdesafia" target="_blank" rel="noopener" class="btn btn--cta-primary navbar__cta" id="nav-cta"
+          >Agendar reunión</a
+        >
+        <button
+          class="navbar__hamburger"
+          id="hamburger"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" role="menu">
+      <a href="equipo.html" class="mobile-menu__link">Equipo</a>
+      <a href="formacion.html" class="mobile-menu__link">Programas</a>
+      <a href="casos.html" class="mobile-menu__link">Casos</a>
+      <a href="#contacto" class="mobile-menu__link">Contactar</a>
+      <a href="https://calendly.com/andres-somosdesafia" target="_blank" rel="noopener" class="btn btn--cta-primary mobile-menu__cta">Agendar reunión</a>
+    </div>
+
+    <main>
+      <!-- ═══════════════════ HERO ═══════════════════ -->
+      <section class="hero" id="inicio" aria-labelledby="hero-heading">
+        <!-- Canvas animation -->
+        <canvas class="hero__canvas" id="canv" aria-hidden="true"></canvas>
+
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1 class="hero__title reveal" data-delay="100" id="hero-heading">
+              Capacitación en
+              <span class="gradient-emp">Inteligencia Artificial</span>
+              para Empresas
+            </h1>
+
+            <div class="hero__divider reveal" data-delay="200" aria-hidden="true"></div>
+
+            <p class="hero__subtitle reveal" data-delay="250">
+              Talleres prácticos para gerencias y equipos que buscan ahorrar tiempo, mejorar análisis y automatizar tareas con IA.
+            </p>
+
+            <div class="hero__chips reveal" data-delay="350">
+              <span class="hero__chip">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                Presencial u online
+              </span>
+              <span class="hero__chip">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Gerencia y equipos
+              </span>
+              <span class="hero__chip">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                SENCE / OTEC
+              </span>
+            </div>
+
+            <div class="hero__actions reveal" data-delay="450">
+              <a href="formacion.html" class="btn btn--holo" id="hero-cta-primary">
+                Ver programas
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero__scroll-hint" aria-hidden="true">
+          <svg class="hero__scroll-icon" width="24" height="38" viewBox="0 0 24 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="22" height="36" rx="11" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+            <circle class="hero__scroll-dot" cx="12" cy="10" r="3" fill="rgba(0,191,255,0.9)"/>
+          </svg>
+          <span class="hero__scroll-text">Ver más</span>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ TRUST / SOCIAL PROOF ═══════════════════ -->
+      <section class="trust" id="conocenos" aria-labelledby="trust-heading">
+        <div class="container">
+          <div class="section-header reveal" style="text-align: center; margin-bottom: 2rem;">
+            <p class="trust__label" style="margin-bottom: 0.8rem; display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--primary-blue); background: rgba(65,105,225,0.08); padding: 0.4rem 1.2rem; border-radius: 999px; border: 1px solid rgba(65,105,225,0.15);">
+              Casos de Éxito
+            </p>
+            <h2 class="section-title" id="trust-heading" style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; color: var(--text-dark); margin: 0;">
+              Empresas e instituciones que ya han trabajado con nosotros
+            </h2>
+          </div>
+          <div class="scene reveal" data-delay="100">
+            <div class="a3d" style="--n: 16">
+              <img class="card" src="assets/trust/1.png" style="--i: 0" alt="Socio 1" />
+              <img class="card" src="assets/trust/2.png" style="--i: 1" alt="Socio 2" />
+              <img class="card" src="assets/trust/3.png" style="--i: 2" alt="Socio 3" />
+              <img class="card" src="assets/trust/4.png" style="--i: 3" alt="Socio 4" />
+              <img class="card" src="assets/trust/5.png" style="--i: 4" alt="Socio 5" />
+              <img class="card" src="assets/trust/6.png" style="--i: 5" alt="Socio 6" />
+              <img class="card" src="assets/trust/7.png" style="--i: 6" alt="Socio 7" />
+              <img class="card" src="assets/trust/8.png" style="--i: 7" alt="Socio 8" />
+              <!-- Duplicate set to form a continuous cylinder -->
+              <img class="card" src="assets/trust/1.png" style="--i: 8" alt="Socio 1" />
+              <img class="card" src="assets/trust/2.png" style="--i: 9" alt="Socio 2" />
+              <img class="card" src="assets/trust/3.png" style="--i: 10" alt="Socio 3" />
+              <img class="card" src="assets/trust/4.png" style="--i: 11" alt="Socio 4" />
+              <img class="card" src="assets/trust/5.png" style="--i: 12" alt="Socio 5" />
+              <img class="card" src="assets/trust/6.png" style="--i: 13" alt="Socio 6" />
+              <img class="card" src="assets/trust/7.png" style="--i: 14" alt="Socio 7" />
+              <img class="card" src="assets/trust/8.png" style="--i: 15" alt="Socio 8" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ VALUE PROPOSITION ═══════════════════ -->
+      <section class="value-prop" aria-labelledby="value-heading">
+        <div class="value-prop__glow" aria-hidden="true"></div>
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="section-title" id="value-heading">
+              La IA ya está entrando en las empresas
+            </h2>
+          </div>
+
+          <div class="cards-grid cards-grid--3">
+            <article class="value-card value-card--glass reveal" data-delay="0" id="card-ia-usage">
+              <canvas class="value-card__canvas" data-anim="bars" aria-hidden="true"></canvas>
+              <div class="value-card__overlay" aria-hidden="true"></div>
+              <div class="value-card__accent value-card__accent--cyan" aria-hidden="true"></div>
+              <div class="value-card__content">
+                <span class="value-card__highlight" data-count="78">78%</span>
+                <h3 class="value-card__title">de las empresas ya usan IA</h3>
+              </div>
+            </article>
+
+            <article class="value-card value-card--glass reveal" data-delay="100" id="card-ia-productivity">
+              <canvas class="value-card__canvas" data-anim="trend" aria-hidden="true"></canvas>
+              <div class="value-card__overlay" aria-hidden="true"></div>
+              <div class="value-card__accent value-card__accent--blue" aria-hidden="true"></div>
+              <div class="value-card__content">
+                <span class="value-card__highlight">Mejora</span>
+                <h3 class="value-card__title">La IA dispara la productividad de los equipos</h3>
+              </div>
+            </article>
+
+            <article class="value-card value-card--glass reveal" data-delay="200" id="card-ia-leadership">
+              <canvas class="value-card__canvas" data-anim="network" aria-hidden="true"></canvas>
+              <div class="value-card__overlay" aria-hidden="true"></div>
+              <div class="value-card__accent value-card__accent--purple" aria-hidden="true"></div>
+              <div class="value-card__content">
+                <span class="value-card__highlight">Liderazgo</span>
+                <h3 class="value-card__title">La barrera es cultural y directiva, no tecnológica</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ PROGRAMAS ═══════════════════ -->
+      <section
+        class="programs"
+        id="formacion"
+        aria-labelledby="programs-heading"
+      >
+        <div class="programs__bg-blob" aria-hidden="true"></div>
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="section-title" id="programs-heading">Programas</h2>
+          </div>
+
+          <div class="cards-grid cards-grid--3">
+            <article class="program-card reveal" data-delay="0" id="prog-gerencia">
+              <div class="program-card__banner program-card__banner--1">
+                <span class="program-card__badge">Programa 1</span>
+                <div class="program-card__price">3<span class="program-card__duration"> horas</span></div>
+              </div>
+              <div class="program-card__body">
+                <h3 class="program-card__title">Taller IA Alta Gerencia</h3>
+                <p class="program-card__meta">Para Directorios y gerencias</p>
+                <a href="#contacto" class="btn btn--solid-white program-card__button" id="prog-link-gerencia">
+                  Solicitar programa
+                </a>
+                <ul class="program-card__features">
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Enfoque estratégico en IA</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Casos de uso gerenciales</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Liderazgo en adopción</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Alineación de objetivos</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="program-card program-card--featured reveal" data-delay="100" id="prog-equipos-aplicada">
+              <div class="program-card__banner program-card__banner--2">
+                <span class="program-card__badge">Programa 2</span>
+                <div class="program-card__price">12<span class="program-card__duration"> horas</span></div>
+              </div>
+              <div class="program-card__body">
+                <h3 class="program-card__title">IA Aplicada Equipos</h3>
+                <p class="program-card__meta">Para Equipos y jefaturas</p>
+                <a href="#contacto" class="btn btn--solid-white program-card__button" id="prog-link-equipos-aplicada">
+                  Solicitar programa
+                </a>
+                <ul class="program-card__features">
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Aumento de productividad</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Manejo práctico de ChatGPT</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Optimización de procesos</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Integración de herramientas</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="program-card reveal" data-delay="200" id="prog-automatizacion">
+              <div class="program-card__banner program-card__banner--3">
+                <span class="program-card__badge">Programa 3</span>
+                <div class="program-card__price">12<span class="program-card__duration"> horas</span></div>
+              </div>
+              <div class="program-card__body">
+                <h3 class="program-card__title">Automatización con IA</h3>
+                <p class="program-card__meta">Para Equipos operativos</p>
+                <a href="#contacto" class="btn btn--solid-white program-card__button" id="prog-link-automatizacion">
+                  Solicitar programa
+                </a>
+                <ul class="program-card__features">
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Automatización de tareas</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Creación de agentes IA</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Flujos de trabajo eficientes</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Operaciones escalables</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ CTA FINAL ═══════════════════ -->
+      <section class="cta-final" id="contacto" aria-labelledby="cta-heading">
+        <div class="cta-final__glow cta-final__glow--one" aria-hidden="true"></div>
+        <div class="cta-final__glow cta-final__glow--two" aria-hidden="true"></div>
+        <div class="container cta-final__inner">
+          <div class="cta-final__shell reveal">
+            <div class="cta-final__content">
+              <span class="section-tag section-tag--light">Resultados</span>
+              <h2 class="cta-final__title" id="cta-heading">
+                ¿Qué se lleva tu equipo?
+              </h2>
+              <div class="cta-final__actions">
+                <a
+                  href="https://calendly.com/andres-somosdesafia"
+                  class="btn btn--solid-white btn--xl"
+                  id="cta-final-btn"
+                >
+                  Solicitar programa
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="cta-final__results">
+              <ul class="cta-final__list" aria-label="Resultados del programa">
+                <li class="cta-final__item reveal" data-delay="0">
+                  <span class="cta-final__item-text">Uso práctico de herramientas de IA</span>
+                </li>
+                <li class="cta-final__item reveal" data-delay="80">
+                  <span class="cta-final__item-text">Automatización de tareas</span>
+                </li>
+                <li class="cta-final__item reveal" data-delay="160">
+                  <span class="cta-final__item-text">Mejora en análisis y decisiones</span>
+                </li>
+                <li class="cta-final__item reveal" data-delay="240">
+                  <span class="cta-final__item-text">Construcción de agentes simples</span>
+                </li>
+                <li class="cta-final__item cta-final__item--wide reveal" data-delay="320">
+                  <span class="cta-final__item-text">Identificación de oportunidades reales</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ CASOS (HOME) ═══════════════════ -->
+      <section class="cases" id="casos" aria-labelledby="cases-heading">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="section-title" id="cases-heading">Casos reales en empresas</h2>
+          </div>
+
+          <div class="cases-cards reveal">
+            <!-- Card 1: Transbank -->
+            <div class="cases-card">
+              <img src="assets/trust/1.png" alt="Logo Transbank" loading="lazy" />
+              <div class="cases-card__title">Transbank</div>
+              <p class="cases-card__desc">Formación a gerencia en uso estratégico de IA</p>
+            </div>
+
+            <!-- Card 2: UDLA -->
+            <div class="cases-card">
+              <img src="assets/trust/2.png" alt="Logo UDLA" loading="lazy" />
+              <div class="cases-card__title">UDLA</div>
+              <p class="cases-card__desc">Automatización de procesos de compras</p>
+            </div>
+
+            <!-- Card 3: Hub Lo Barnechea -->
+            <div class="cases-card">
+              <img src="assets/trust/3.png" alt="Logo Hub Lo Barnechea" loading="lazy" />
+              <div class="cases-card__title">Hub Lo Barnechea</div>
+              <p class="cases-card__desc">Talleres de IA para emprendedores</p>
+            </div>
+
+            <!-- Card 4: UANDES -->
+            <div class="cases-card">
+              <img src="assets/trust/4.png" alt="Logo Universidad de los Andes" loading="lazy" />
+              <div class="cases-card__title">UANDES</div>
+              <p class="cases-card__desc">Formación y conexión académica en IA</p>
+            </div>
+          </div>
+
+          <div class="cases__actions reveal" data-delay="400">
+            <a href="casos.html" class="btn btn--xl cases__button">
+              <span>Ver casos completos</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="footer" role="contentinfo">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <a href="#inicio" class="navbar__logo footer__logo">
+            <img src="assets/imagenes/logo_desafia.png" alt="DesafIA Logo" class="navbar__logo-img" />
+          </a>
+          <p class="footer__tagline">
+            Formación en IA y Automatización para Empresas
+          </p>
+        </div>
+        <div class="footer__contact">
+          <a
+            href="mailto:andres@somosdesafia.cl"
+            class="footer__link"
+            id="footer-email"
+            >andres@somosdesafia.cl</a
+          >
+          <a
+            href="https://www.linkedin.com/in/andreshidalgog"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__link"
+            id="footer-linkedin"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+              />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            LinkedIn: /andreshidalgog
+          </a>
+        </div>
+        <p class="footer__copy">
+          © 2024 DesafIA. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="animations.js"></script>
+    <script>
+      (function () {
+        const canvas = document.getElementById("canv");
+        if (!canvas) return;
+
+        const heroSection = document.getElementById("inicio");
+        const ctx = canvas.getContext("2d", { alpha: false });
+        if (!ctx) return;
+
+        const COLORS = {
+          bg: [5, 5, 16],
+          deep: [75, 0, 130],
+          blue: [65, 105, 225],
+          cyan: [0, 191, 255],
+          soft: [204, 204, 255],
+          magenta: [180, 50, 220],
+        };
+
+        const TAU = Math.PI * 2;
+        const state = {
+          width: 0,
+          height: 0,
+          dpr: 1,
+          centerX: 0,
+          centerY: 0,
+          radius: 0,
+          nodes: [],
+          edges: [],
+          pulses: [],
+          stars: [],
+          neuronRings: [],
+          pulseClock: 0,
+          burstClock: 2.4,
+          waveClock: 0,
+          pointerX: 0,
+          pointerY: 0,
+          targetPointerX: 0,
+          targetPointerY: 0,
+          motion: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0.45 : 1,
+          isMobile: window.matchMedia("(max-width: 900px)").matches,
+        };
+
+        let rafId = 0;
+        let lastTime = performance.now();
+        let resizeTimer = 0;
+
+        function clamp(value, min, max) {
+          return Math.max(min, Math.min(max, value));
+        }
+
+        function random(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+
+        function lerp(a, b, t) {
+          return a + (b - a) * t;
+        }
+
+        function rgba(rgb, alpha) {
+          return "rgba(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + "," + alpha + ")";
+        }
+
+        function dist3(a, b) {
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const dz = a.z - b.z;
+          return Math.sqrt(dx * dx + dy * dy + dz * dz);
+        }
+
+        function fibonacciPoint(index, total) {
+          if (total <= 1) return { x: 0, y: 0, z: 0 };
+          const t = index / (total - 1);
+          const y = 1 - t * 2;
+          const radius = Math.sqrt(Math.max(0, 1 - y * y));
+          const theta = Math.PI * (3 - Math.sqrt(5)) * index;
+          return {
+            x: Math.cos(theta) * radius,
+            y: y,
+            z: Math.sin(theta) * radius,
+          };
+        }
+
+        function nearestNodes(sourceId, candidates, nodes, limit, maxDistance) {
+          const source = nodes[sourceId];
+          const ranked = [];
+
+          for (let i = 0; i < candidates.length; i += 1) {
+            const targetId = candidates[i];
+            if (targetId === sourceId) continue;
+            const distance = dist3(source, nodes[targetId]);
+            if (typeof maxDistance === "number" && distance > maxDistance) continue;
+            ranked.push({ id: targetId, distance: distance });
+          }
+
+          ranked.sort(function (a, b) {
+            return a.distance - b.distance;
+          });
+
+          return ranked.slice(0, limit).map(function (item) {
+            return item.id;
+          });
+        }
+
+        function edgeColorByLayer(avgLayer) {
+          if (avgLayer >= 3.5) return COLORS.cyan;
+          if (avgLayer >= 2.5) return COLORS.blue;
+          if (avgLayer >= 1.5) return COLORS.magenta;
+          return COLORS.soft;
+        }
+
+        function spawnPulse(edgeIndex, startProgress) {
+          if (!state.edges.length) return;
+
+          const idx = typeof edgeIndex === "number" ? edgeIndex : Math.floor(Math.random() * state.edges.length);
+          const roll = Math.random();
+          const color = roll < 0.4 ? COLORS.cyan : roll < 0.7 ? COLORS.blue : roll < 0.9 ? COLORS.magenta : COLORS.soft;
+
+          state.pulses.push({
+            edgeIndex: idx,
+            progress: typeof startProgress === "number" ? startProgress : 0,
+            speed: random(0.34, 0.96) * state.motion,
+            radius: random(1.8, 4.2),
+            color: color,
+          });
+
+          if (state.pulses.length > 340) {
+            state.pulses.shift();
+          }
+        }
+
+        function buildStars() {
+          const areaFactor = clamp((state.width * state.height) / (1600 * 900), 0.6, 1.6);
+          const baseCount = state.isMobile ? 100 : 200;
+          const count = Math.round(baseCount * areaFactor);
+          const stars = [];
+
+          for (let i = 0; i < count; i += 1) {
+            const choice = Math.random();
+            const color = choice < 0.55 ? COLORS.soft : choice < 0.75 ? COLORS.cyan : choice < 0.9 ? COLORS.blue : COLORS.magenta;
+            stars.push({
+              x: Math.random(),
+              y: Math.random(),
+              depth: random(0.28, 1),
+              size: random(0.35, 1.8),
+              phase: random(0, TAU),
+              twinkle: random(0.35, 1.4),
+              color: color,
+            });
+          }
+
+          state.stars = stars;
+        }
+
+        function buildNetwork() {
+          const density = state.isMobile ? 0.72 : 1;
+          const layers = [
+            { radius: 0.03, count: 1, size: 3.0, color: COLORS.soft },
+            { radius: 0.22, count: Math.max(8, Math.round(14 * density)), size: 2.2, color: COLORS.cyan },
+            { radius: 0.40, count: Math.max(14, Math.round(28 * density)), size: 1.7, color: COLORS.magenta },
+            { radius: 0.58, count: Math.max(22, Math.round(44 * density)), size: 1.4, color: COLORS.blue },
+            { radius: 0.78, count: Math.max(34, Math.round(64 * density)), size: 1.15, color: COLORS.soft },
+            { radius: 1.0, count: Math.max(44, Math.round(88 * density)), size: 0.95, color: COLORS.cyan },
+          ];
+
+          const nodes = [];
+          const layerBuckets = [];
+          let nodeId = 0;
+
+          for (let layerIndex = 0; layerIndex < layers.length; layerIndex += 1) {
+            const layer = layers[layerIndex];
+            const bucket = [];
+
+            for (let i = 0; i < layer.count; i += 1) {
+              const base = layer.count === 1
+                ? { x: 0, y: 0, z: 0 }
+                : fibonacciPoint(i + Math.random() * 0.2, layer.count);
+
+              const jitter = layerIndex === 0 ? 0 : (Math.random() - 0.5) * (0.14 / (layerIndex + 1));
+              const radius = layer.radius * (1 + jitter);
+
+              nodes.push({
+                id: nodeId,
+                layer: layerIndex,
+                x: base.x * radius,
+                y: base.y * radius,
+                z: base.z * radius,
+                baseSize: layer.size * random(0.86, 1.25),
+                phase: random(0, TAU),
+                twinkle: random(0.75, 1.25),
+                color: layer.color,
+                activation: 0,
+                px: 0,
+                py: 0,
+                vis: 0,
+                renderSize: 1,
+              });
+
+              bucket.push(nodeId);
+              nodeId += 1;
+            }
+
+            layerBuckets.push(bucket);
+          }
+
+          const edges = [];
+          const edgeSet = new Set();
+
+          function addEdge(a, b, strength) {
+            if (a === b) return;
+            const key = a < b ? a + "-" + b : b + "-" + a;
+            if (edgeSet.has(key)) return;
+            edgeSet.add(key);
+
+            const avgLayer = (nodes[a].layer + nodes[b].layer) * 0.5;
+            edges.push({
+              a: a,
+              b: b,
+              strength: strength,
+              phase: Math.random(),
+              color: edgeColorByLayer(avgLayer),
+            });
+          }
+
+          for (let layer = 1; layer < layerBuckets.length; layer += 1) {
+            const current = layerBuckets[layer];
+            const previous = layerBuckets[layer - 1];
+
+            for (let i = 0; i < current.length; i += 1) {
+              const node = current[i];
+              const prevNearest = nearestNodes(node, previous, nodes, layer === 1 ? 1 : 3);
+              const sameNearest = nearestNodes(node, current, nodes, layer < 3 ? 2 : 3, 0.38 + layer * 0.22);
+
+              for (let p = 0; p < prevNearest.length; p += 1) {
+                addEdge(node, prevNearest[p], 0.88 - p * 0.18);
+              }
+
+              for (let s = 0; s < sameNearest.length; s += 1) {
+                if (Math.random() < 0.78) {
+                  addEdge(node, sameNearest[s], 0.44 + Math.random() * 0.22);
+                }
+              }
+            }
+
+            if (layer < layerBuckets.length - 1) {
+              const next = layerBuckets[layer + 1];
+              for (let i = 0; i < Math.min(current.length, next.length); i += 2) {
+                addEdge(current[i], next[(i * 7) % next.length], 0.48 + Math.random() * 0.2);
+              }
+            }
+          }
+
+          const outerNodes = layerBuckets.slice(2).flat();
+          const extraLinks = Math.floor(outerNodes.length * (state.isMobile ? 0.22 : 0.36));
+
+          for (let i = 0; i < extraLinks; i += 1) {
+            const a = outerNodes[Math.floor(Math.random() * outerNodes.length)];
+            const b = outerNodes[Math.floor(Math.random() * outerNodes.length)];
+            if (a === b) continue;
+            if (dist3(nodes[a], nodes[b]) < 0.95) {
+              addEdge(a, b, 0.36 + Math.random() * 0.24);
+            }
+          }
+
+          const core = layerBuckets[0][0];
+          const bridges = state.isMobile ? 10 : 18;
+          for (let i = 0; i < bridges; i += 1) {
+            const target = outerNodes[Math.floor(Math.random() * outerNodes.length)];
+            addEdge(core, target, 0.55 + Math.random() * 0.24);
+          }
+
+          // Cross-layer long-range "skip connections" (like residual networks)
+          for (let l = 0; l < layerBuckets.length - 2; l += 1) {
+            const from = layerBuckets[l];
+            const to = layerBuckets[l + 2];
+            const skipCount = Math.floor(Math.min(from.length, to.length) * 0.18);
+            for (let i = 0; i < skipCount; i += 1) {
+              const a = from[Math.floor(Math.random() * from.length)];
+              const b = to[Math.floor(Math.random() * to.length)];
+              addEdge(a, b, 0.32 + Math.random() * 0.18);
+            }
+          }
+
+          state.nodes = nodes;
+          state.edges = edges;
+          state.pulses = [];
+          state.pulseClock = 0;
+          state.burstClock = random(1.8, 3.2);
+
+          const initialPulses = state.isMobile ? 18 : 36;
+          for (let i = 0; i < initialPulses; i += 1) {
+            spawnPulse(Math.floor(Math.random() * state.edges.length), Math.random());
+          }
+        }
+
+        function resizeCanvas(rebuildNetwork) {
+          state.isMobile = window.matchMedia("(max-width: 900px)").matches;
+          state.dpr = Math.min(window.devicePixelRatio || 1, 2);
+          state.width = window.innerWidth;
+          state.height = heroSection ? Math.max(window.innerHeight, heroSection.offsetHeight) : window.innerHeight;
+          state.centerX = state.width * (state.isMobile ? 0.5 : 0.7);
+          state.centerY = state.height * 0.50;
+          state.radius = Math.min(state.width, state.height) * (state.isMobile ? 0.32 : 0.36);
+
+          canvas.width = Math.floor(state.width * state.dpr);
+          canvas.height = Math.floor(state.height * state.dpr);
+          canvas.style.width = state.width + "px";
+          canvas.style.height = state.height + "px";
+          ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+
+          buildStars();
+          if (rebuildNetwork || state.nodes.length === 0) {
+            buildNetwork();
+          }
+        }
+
+        function drawBackground(t) {
+          ctx.fillStyle = rgba(COLORS.bg, 1);
+          ctx.fillRect(0, 0, state.width, state.height);
+
+          // Dual orbiting nebula glow
+          const swingX1 = state.centerX + Math.sin(t * 0.18 * state.motion) * state.width * 0.18;
+          const swingY1 = state.centerY + Math.cos(t * 0.15 * state.motion) * state.height * 0.14;
+          const swingX2 = state.centerX + Math.cos(t * 0.14 * state.motion + 2.1) * state.width * 0.22;
+          const swingY2 = state.centerY + Math.sin(t * 0.12 * state.motion + 1.3) * state.height * 0.16;
+
+          var minDim = Math.min(state.width, state.height);
+          var maxDim = Math.max(state.width, state.height);
+
+          var aura = ctx.createRadialGradient(
+            swingX1, swingY1, minDim * 0.06,
+            state.centerX, state.centerY, maxDim * 0.72
+          );
+          aura.addColorStop(0, rgba(COLORS.blue, 0.32));
+          aura.addColorStop(0.3, rgba(COLORS.deep, 0.26));
+          aura.addColorStop(0.65, rgba(COLORS.cyan, 0.12));
+          aura.addColorStop(1, "rgba(5,5,16,0)");
+          ctx.fillStyle = aura;
+          ctx.fillRect(0, 0, state.width, state.height);
+
+          // Second nebula (magenta/purple)
+          var aura2 = ctx.createRadialGradient(
+            swingX2, swingY2, minDim * 0.04,
+            state.centerX, state.centerY, maxDim * 0.6
+          );
+          aura2.addColorStop(0, rgba(COLORS.magenta, 0.18));
+          aura2.addColorStop(0.4, rgba(COLORS.deep, 0.12));
+          aura2.addColorStop(1, "rgba(5,5,16,0)");
+          ctx.fillStyle = aura2;
+          ctx.fillRect(0, 0, state.width, state.height);
+
+          var beam = ctx.createLinearGradient(0, 0, state.width, state.height);
+          beam.addColorStop(0, "rgba(75,0,130,0.22)");
+          beam.addColorStop(0.52, "rgba(7,12,30,0.06)");
+          beam.addColorStop(1, "rgba(0,191,255,0.1)");
+          ctx.fillStyle = beam;
+          ctx.fillRect(0, 0, state.width, state.height);
+        }
+
+        function drawStars(t) {
+          for (let i = 0; i < state.stars.length; i += 1) {
+            const star = state.stars[i];
+            const x = star.x * state.width
+              + Math.sin(t * 0.24 * state.motion + star.phase) * (14 * star.depth)
+              + state.pointerX * 14 * star.depth;
+            const y = star.y * state.height
+              + Math.cos(t * 0.18 * state.motion + star.phase) * (10 * star.depth)
+              + state.pointerY * 10 * star.depth;
+            const flicker = (Math.sin(t * star.twinkle * state.motion + star.phase) + 1) * 0.5;
+            const alpha = (0.08 + flicker * 0.4) * star.depth;
+            const size = star.size * (0.65 + flicker * 0.7);
+
+            ctx.fillStyle = rgba(star.color, alpha);
+            ctx.beginPath();
+            ctx.arc(x, y, size, 0, TAU);
+            ctx.fill();
+          }
+        }
+
+        // Draw pulsing concentric rings around the neural network (layer boundaries)
+        function drawNeuronRings(t) {
+          ctx.save();
+          ctx.globalCompositeOperation = "lighter";
+          var cx = state.centerX + state.pointerX * 35;
+          var cy = state.centerY + state.pointerY * 24;
+          var layerRadii = [0.22, 0.40, 0.58, 0.78, 1.0];
+          var ringColors = [COLORS.cyan, COLORS.magenta, COLORS.blue, COLORS.soft, COLORS.cyan];
+
+          for (var r = 0; r < layerRadii.length; r++) {
+            var baseR = layerRadii[r] * state.radius * 1.15;
+            var wave = Math.sin(t * 0.8 * state.motion + r * 1.2) * 0.06;
+            var radius = baseR * (1 + wave);
+            var alpha = 0.03 + 0.025 * Math.sin(t * 1.2 * state.motion + r * 0.9);
+            ctx.strokeStyle = rgba(ringColors[r], alpha);
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(cx, cy, radius, 0, TAU);
+            ctx.stroke();
+          }
+          ctx.restore();
+        }
+
+        function projectNodes(t) {
+          const yaw = t * 0.2 * state.motion + state.pointerX * 0.5;
+          const pitch = Math.sin(t * 0.16 * state.motion) * 0.28 + state.pointerY * 0.25;
+          const cosY = Math.cos(yaw);
+          const sinY = Math.sin(yaw);
+          const cosX = Math.cos(pitch);
+          const sinX = Math.sin(pitch);
+
+          const networkCenterX = state.centerX + state.pointerX * 35;
+          const networkCenterY = state.centerY + state.pointerY * 24;
+
+          // Propagation wave for activation effect
+          state.waveClock += 0.016 * state.motion;
+          var wavePos = (state.waveClock * 0.3) % 1.4;
+
+          for (let i = 0; i < state.nodes.length; i += 1) {
+            const node = state.nodes[i];
+            const breathe = 1 + Math.sin(t * node.twinkle * state.motion + node.phase) * 0.06;
+
+            const x = node.x * breathe;
+            const y = node.y * breathe;
+            const z = node.z * breathe;
+
+            const xr = x * cosY - z * sinY;
+            const zr = x * sinY + z * cosY;
+            const yr = y * cosX - zr * sinX;
+            const zf = y * sinX + zr * cosX;
+
+            const vis = clamp((zf + 1.35) / 2.7, 0, 1);
+            const perspective = 0.62 + vis * 1.06;
+
+            node.px = networkCenterX + xr * state.radius * perspective;
+            node.py = networkCenterY + yr * state.radius * perspective * 0.9;
+            node.vis = vis;
+
+            // Neural activation: nodes "light up" as the wave passes their layer
+            var layerNorm = node.layer / 5;
+            var waveDist = Math.abs(layerNorm - wavePos);
+            var activation = waveDist < 0.18 ? (1 - waveDist / 0.18) * 0.6 : 0;
+            node.activation = node.activation * 0.92 + activation * 0.08;
+
+            node.renderSize = node.baseSize
+              * (0.78 + vis * 1.25)
+              * (0.92 + Math.sin(t * 1.3 * state.motion + node.phase) * 0.12)
+              * (1 + node.activation * 0.8);
+          }
+        }
+
+        function drawConnections(t) {
+          ctx.save();
+          ctx.lineCap = "round";
+
+          for (let i = 0; i < state.edges.length; i += 1) {
+            const edge = state.edges[i];
+            const a = state.nodes[edge.a];
+            const b = state.nodes[edge.b];
+            const depthMix = (a.vis + b.vis) * 0.5;
+            if (depthMix < 0.08) continue;
+
+            // Activation glow on connections
+            var edgeActivation = (a.activation + b.activation) * 0.5;
+
+            const shimmer = 0.82 + 0.18 * Math.sin(t * 2.2 * state.motion + edge.phase * TAU);
+            const alpha = (0.05 + depthMix * 0.26 + edgeActivation * 0.35) * edge.strength * shimmer;
+            const width = (0.35 + depthMix * 1.3 + edgeActivation * 1.5) * edge.strength;
+
+            // Soft outer glow
+            ctx.strokeStyle = rgba(edge.color, alpha * 0.35);
+            ctx.lineWidth = width * 3;
+            ctx.beginPath();
+            ctx.moveTo(a.px, a.py);
+            ctx.lineTo(b.px, b.py);
+            ctx.stroke();
+
+            // Core line
+            ctx.strokeStyle = rgba(edge.color, alpha);
+            ctx.lineWidth = width;
+            ctx.beginPath();
+            ctx.moveTo(a.px, a.py);
+            ctx.lineTo(b.px, b.py);
+            ctx.stroke();
+
+            // Data flow particles along edges
+            if (edge.phase < 0.2 || edgeActivation > 0.1) {
+              const flow = (t * 0.3 * state.motion + edge.phase * 1.7) % 1;
+              const hx = lerp(a.px, b.px, flow);
+              const hy = lerp(a.py, b.py, flow);
+              ctx.fillStyle = rgba(COLORS.cyan, depthMix * 0.3 + edgeActivation * 0.4);
+              ctx.beginPath();
+              ctx.arc(hx, hy, 1.4 + depthMix * 1.8 + edgeActivation * 2, 0, TAU);
+              ctx.fill();
+            }
+          }
+
+          ctx.restore();
+        }
+
+        function updateAndDrawPulses(dt) {
+          state.pulseClock += dt * (state.isMobile ? 9 : 16) * state.motion;
+          while (state.pulseClock >= 1) {
+            spawnPulse();
+            state.pulseClock -= 1;
+          }
+
+          state.burstClock -= dt * state.motion;
+          if (state.burstClock <= 0 && state.edges.length) {
+            const burstCount = state.isMobile ? 6 : 12;
+            const seedEdge = Math.floor(Math.random() * state.edges.length);
+            for (let i = 0; i < burstCount; i += 1) {
+              spawnPulse((seedEdge + i * 13) % state.edges.length, Math.random() * 0.25);
+            }
+            state.burstClock = random(1.4, 2.8);
+          }
+
+          ctx.save();
+          ctx.globalCompositeOperation = "lighter";
+
+          for (let i = state.pulses.length - 1; i >= 0; i -= 1) {
+            const pulse = state.pulses[i];
+            const edge = state.edges[pulse.edgeIndex];
+            if (!edge) {
+              state.pulses.splice(i, 1);
+              continue;
+            }
+
+            const a = state.nodes[edge.a];
+            const b = state.nodes[edge.b];
+            const depthMix = (a.vis + b.vis) * 0.5;
+            if (depthMix <= 0.05) continue;
+
+            pulse.progress += dt * pulse.speed;
+            if (pulse.progress >= 1.05) {
+              // When pulse arrives at destination, boost node activation
+              b.activation = Math.min(1, b.activation + 0.15);
+              state.pulses.splice(i, 1);
+              continue;
+            }
+
+            const tailT = Math.max(0, pulse.progress - 0.12);
+            const x = lerp(a.px, b.px, pulse.progress);
+            const y = lerp(a.py, b.py, pulse.progress);
+            const tx = lerp(a.px, b.px, tailT);
+            const ty = lerp(a.py, b.py, tailT);
+
+            const fade = pulse.progress < 0.85 ? 1 : 1 - (pulse.progress - 0.85) / 0.2;
+            const alpha = clamp((0.22 + depthMix * 0.72) * fade, 0, 1);
+
+            // Longer glowing tail
+            ctx.strokeStyle = rgba(pulse.color, alpha * 0.55);
+            ctx.lineWidth = pulse.radius * (0.9 + depthMix * 1.3);
+            ctx.beginPath();
+            ctx.moveTo(tx, ty);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            const glowRadius = pulse.radius * (2.2 + depthMix * 2.6);
+            const glow = ctx.createRadialGradient(x, y, 0, x, y, glowRadius);
+            glow.addColorStop(0, rgba(pulse.color, alpha));
+            glow.addColorStop(0.4, rgba(pulse.color, alpha * 0.4));
+            glow.addColorStop(1, "rgba(0,0,0,0)");
+
+            ctx.fillStyle = glow;
+            ctx.beginPath();
+            ctx.arc(x, y, glowRadius, 0, TAU);
+            ctx.fill();
+          }
+
+          ctx.restore();
+        }
+
+        function drawCore(t) {
+          const x = state.centerX + state.pointerX * 26;
+          const y = state.centerY + state.pointerY * 18;
+          const pulse = 1 + Math.sin(t * 1.5 * state.motion) * 0.12;
+          const radius = state.radius * 0.14 * pulse;
+
+          // Outer halo with pulsing rings
+          for (var ring = 3; ring >= 1; ring--) {
+            var ringR = radius * (1.8 + ring * 0.8);
+            var ringAlpha = 0.04 + 0.03 * Math.sin(t * 2 * state.motion + ring * 1.1);
+            ctx.strokeStyle = rgba(COLORS.cyan, ringAlpha);
+            ctx.lineWidth = 0.8;
+            ctx.beginPath();
+            ctx.arc(x, y, ringR, 0, TAU);
+            ctx.stroke();
+          }
+
+          const halo = ctx.createRadialGradient(x, y, 0, x, y, radius * 3.8);
+          halo.addColorStop(0, rgba(COLORS.cyan, 0.32));
+          halo.addColorStop(0.25, rgba(COLORS.blue, 0.22));
+          halo.addColorStop(0.6, rgba(COLORS.magenta, 0.08));
+          halo.addColorStop(1, "rgba(0,0,0,0)");
+          ctx.fillStyle = halo;
+          ctx.beginPath();
+          ctx.arc(x, y, radius * 3.8, 0, TAU);
+          ctx.fill();
+
+          const core = ctx.createRadialGradient(x, y, 0, x, y, radius);
+          core.addColorStop(0, rgba(COLORS.soft, 0.98));
+          core.addColorStop(0.3, rgba(COLORS.cyan, 0.75));
+          core.addColorStop(0.7, rgba(COLORS.blue, 0.3));
+          core.addColorStop(1, rgba(COLORS.deep, 0));
+          ctx.fillStyle = core;
+          ctx.beginPath();
+          ctx.arc(x, y, radius, 0, TAU);
+          ctx.fill();
+        }
+
+        function drawNodes() {
+          const sorted = state.nodes.slice().sort(function (a, b) {
+            return a.vis - b.vis;
+          });
+
+          ctx.save();
+          ctx.globalCompositeOperation = "lighter";
+
+          for (let i = 0; i < sorted.length; i += 1) {
+            const node = sorted[i];
+            const alpha = 0.12 + node.vis * 0.88;
+            const activation = node.activation || 0;
+            const radius = node.renderSize * (node.layer === 0 ? 1.8 : 1);
+            if (radius <= 0.3) continue;
+
+            // Activation halo
+            if (activation > 0.02) {
+              ctx.fillStyle = rgba(COLORS.cyan, activation * alpha * 0.3);
+              ctx.beginPath();
+              ctx.arc(node.px, node.py, radius * (3.5 + activation * 3), 0, TAU);
+              ctx.fill();
+            }
+
+            // Outer glow
+            ctx.fillStyle = rgba(node.color, alpha * (0.22 + activation * 0.3));
+            ctx.beginPath();
+            ctx.arc(node.px, node.py, radius * 2.6, 0, TAU);
+            ctx.fill();
+
+            // Node body
+            ctx.fillStyle = rgba(node.color, alpha * (0.7 + activation * 0.3));
+            ctx.beginPath();
+            ctx.arc(node.px, node.py, radius, 0, TAU);
+            ctx.fill();
+
+            // Bright center
+            ctx.fillStyle = rgba(COLORS.soft, alpha * (0.75 + activation * 0.25));
+            ctx.beginPath();
+            ctx.arc(node.px, node.py, radius * 0.38, 0, TAU);
+            ctx.fill();
+          }
+
+          ctx.restore();
+        }
+
+        function render(now) {
+          const t = now * 0.001;
+          const dt = Math.min((now - lastTime) * 0.001, 0.05);
+          lastTime = now;
+
+          state.pointerX = lerp(state.pointerX, state.targetPointerX, 0.035);
+          state.pointerY = lerp(state.pointerY, state.targetPointerY, 0.035);
+
+          drawBackground(t);
+          drawStars(t);
+          drawNeuronRings(t);
+          projectNodes(t);
+          drawConnections(t);
+          updateAndDrawPulses(dt);
+          drawCore(t);
+          drawNodes();
+
+          rafId = window.requestAnimationFrame(render);
+        }
+
+        function onResize() {
+          clearTimeout(resizeTimer);
+          resizeTimer = window.setTimeout(function () {
+            resizeCanvas(true);
+          }, 120);
+        }
+
+        window.addEventListener("resize", onResize, { passive: true });
+        window.addEventListener("pointermove", function (event) {
+          if (!state.width || !state.height) return;
+          state.targetPointerX = clamp((event.clientX / state.width) * 2 - 1, -1, 1);
+          state.targetPointerY = clamp((event.clientY / state.height) * 2 - 1, -1, 1);
+        }, { passive: true });
+
+        window.addEventListener("blur", function () {
+          state.targetPointerX = 0;
+          state.targetPointerY = 0;
+        });
+
+        if (heroSection && "ResizeObserver" in window) {
+          const heroObserver = new ResizeObserver(function () {
+            onResize();
+          });
+          heroObserver.observe(heroSection);
+        }
+
+        const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+        if (typeof reducedMotionQuery.addEventListener === "function") {
+          reducedMotionQuery.addEventListener("change", function (event) {
+            state.motion = event.matches ? 0.45 : 1;
+          });
+        }
+
+        resizeCanvas(true);
+        if (rafId) window.cancelAnimationFrame(rafId);
+        rafId = window.requestAnimationFrame(render);
+      })();
+    </script>
+  </body>
+</html>
+
+

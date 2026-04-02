@@ -1,0 +1,601 @@
+/* ═══════════════════════════════════════════════
+   DesafIA – casos.css
+   Crisp Loading Animation + Slideshow (Osmo-inspired)
+   Adapted to DesafIA brand palette
+═══════════════════════════════════════════════ */
+
+/* ── LOADING STATE ──────────────────────────────── */
+
+/* Disable Scroll on Loading */
+main:has(.casos-hero.is--loading) {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* ── HERO SECTION ───────────────────────────────── */
+.casos-hero {
+  background-color: #0a0a1a;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Loading: Hidden */
+.casos-hero.is--loading.is--hidden {
+  display: none;
+}
+
+/* Loading: show loader, hide slider */
+.casos-hero.is--loading .casos-hero__slider {
+  display: none;
+}
+
+.casos-hero.is--loading .casos-loader {
+  display: flex;
+}
+
+/* ── LOADER ─────────────────────────────────────── */
+.casos-loader {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1vw;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.casos-loader__wrap {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.casos-loader__groups {
+  position: relative;
+  overflow: hidden;
+}
+
+.casos-loader__group {
+  border-radius: 0.5em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.casos-loader__single {
+  padding-left: 1em;
+  padding-right: 1em;
+  position: relative;
+}
+
+.casos-loader__media {
+  border-radius: 0.5em;
+  justify-content: center;
+  align-items: center;
+  width: 10em;
+  height: 10em;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.casos-loader__media.is--scaling {
+  will-change: transform;
+  border-radius: 0;
+  transition-property: border-radius;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(1, 0, 0, 1);
+  display: flex;
+}
+
+.casos-loader__img {
+  object-fit: cover;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.casos-loader__media.is--scaling.is--radius {
+  border-radius: 0.5em;
+}
+
+.casos-loader__group.is--relative {
+  position: relative;
+  left: 100%;
+}
+
+.casos-loader__group.is--duplicate {
+  position: absolute;
+}
+
+.casos-loader__img.is--scale-down {
+  will-change: transform;
+}
+
+.casos-loader__fade {
+  pointer-events: none;
+  background-image: linear-gradient(90deg, #0a0a1a 20%, transparent);
+  width: 5em;
+  height: calc(100% + 2px);
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+
+.casos-loader__fade.is--duplicate {
+  left: auto;
+  right: -1px;
+  transform: scaleX(-1);
+}
+
+/* ── HERO CONTENT ───────────────────────────────── */
+.casos-hero__content {
+  color: #f4f4f4;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100dvh;
+  padding: 2.5em 2.5em 5em; /* Aumentado a 5em para que los thumbs suban mucho más */
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+.casos-hero__top {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  min-height: 2em;
+}
+
+.casos-hero__center {
+  width: 100%;
+  padding: 1.5em;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.casos-hero__bottom {
+  grid-column-gap: 0.6em;
+  grid-row-gap: 0.6em;
+  flex-flow: column;
+  align-items: center;
+  margin-top: auto;
+  display: flex;
+  z-index: 4;
+  padding-bottom: 5.5em; /* Valor mayor para subir considerablemente el nav de la base */
+}
+
+/* ── HEADING ────────────────────────────────────── */
+.casos-hero__h1 {
+  text-align: center;
+  letter-spacing: -0.04em;
+  margin-top: 0;
+  margin-bottom: 0.125em;
+  font-family: var(--font);
+  font-size: calc(5vw + 5dvh);
+  font-weight: 900;
+  line-height: 0.95;
+  color: #fff;
+}
+
+.casos-hero__h1 > * {
+  margin: -0.1em -0.05em;
+  padding: 0.1em 0.05em;
+}
+
+/* ── SLIDER ─────────────────────────────────────── */
+.casos-hero__slider {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  border-radius: 0.5em;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+}
+
+.casos-hero__slider-list {
+  grid-template-rows: 100%;
+  grid-template-columns: 100%;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  overflow: hidden;
+}
+
+.casos-hero__slide {
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+  grid-area: 1 / 1 / -1 / -1;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  position: relative;
+  overflow: hidden;
+}
+
+.casos-hero__slide.is--current {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.casos-hero__slide-img {
+  object-fit: cover;
+  will-change: transform;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* Dark overlay gradient for text readability */
+.casos-hero__slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 26, 0.3) 0%,
+    rgba(10, 10, 26, 0.12) 40%,
+    rgba(10, 10, 26, 0.45) 75%,
+    rgba(10, 10, 26, 0.7) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── THUMBNAIL NAV ──────────────────────────────── */
+.casos-hero__nav {
+  grid-column-gap: 0.6em;
+  grid-row-gap: 0.6em;
+  padding: 0.5em;
+  display: flex;
+  position: relative;
+  overflow: visible;
+  z-index: 5;
+}
+
+.casos-hero__thumb {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 0.5em;
+  width: 4.5em;
+  height: 4.5em;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.75s cubic-bezier(0.625, 0.05, 0, 1),
+              transform 0.4s cubic-bezier(0.625, 0.05, 0, 1);
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.casos-hero__thumb-img {
+  object-fit: cover;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: scale(1) rotate(0.001deg);
+  transition: transform 0.75s cubic-bezier(0.625, 0.05, 0, 1);
+}
+
+/* On hover group: scale down all, scale up hovered */
+.casos-hero__nav:has(.casos-hero__thumb:hover) .casos-hero__thumb-img {
+  transform: scale(0.825) rotate(0.001deg);
+}
+
+.casos-hero__nav:has(.casos-hero__thumb:hover)
+  .casos-hero__thumb:hover
+  .casos-hero__thumb-img {
+  transform: scale(1) rotate(0.001deg);
+}
+
+.casos-hero__thumb.is--current {
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 16px rgba(0, 191, 255, 0.25);
+}
+
+/* Thumb label */
+.casos-hero__thumb-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.2em 0.15em;
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.72) 0%, transparent 100%);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* ── CAPTIONS ───────────────────────────────────── */
+.casos-hero__captions {
+  position: relative;
+  min-height: 4.2em;
+  width: 100%;
+  max-width: 42rem;
+  text-align: center;
+  z-index: 5;
+}
+
+.casos-hero__caption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.casos-hero__caption.is--active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.casos-hero__caption h2 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  margin-bottom: 0.4em;
+  background: linear-gradient(90deg, #e0c0ff, var(--accent-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.01em;
+}
+
+.casos-hero__caption p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  max-width: 38rem;
+}
+
+/* ── GALLERY SECTION ────────────────────────────── */
+.casos-gallery {
+  padding-block: 6rem;
+  background: #f8f9fc;
+  position: relative;
+}
+
+.casos-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+}
+
+.casos-gallery__card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  display: block;
+  box-shadow: 0 8px 32px rgba(10, 37, 64, 0.12);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.casos-gallery__card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 20px 50px rgba(10, 37, 64, 0.22);
+}
+
+.casos-gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.5s ease;
+}
+
+.casos-gallery__card:hover .casos-gallery__img {
+  transform: scale(1.08);
+  filter: brightness(0.65);
+}
+
+.casos-gallery__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  background: linear-gradient(
+    180deg,
+    transparent 30%,
+    rgba(10, 10, 26, 0.65) 75%,
+    rgba(10, 10, 26, 0.88) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.casos-gallery__card:hover .casos-gallery__overlay {
+  opacity: 1;
+}
+
+.casos-gallery__overlay h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.3rem;
+  transform: translateY(12px);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.casos-gallery__card:hover .casos-gallery__overlay h3 {
+  transform: translateY(0);
+}
+
+.casos-gallery__overlay p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  transform: translateY(16px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
+}
+
+.casos-gallery__card:hover .casos-gallery__overlay p {
+  transform: translateY(0);
+}
+
+/* ── CTA SECTION ────────────────────────────────── */
+.casos-cta {
+  padding-block: 6rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark) 0%,
+    #1a0a3d 35%,
+    var(--primary-blue) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.casos-cta::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse,
+    rgba(0, 191, 255, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .casos-hero__h1 {
+    font-size: calc(4vw + 4dvh);
+  }
+
+  .casos-hero__thumb {
+    width: 3.8em;
+    height: 3.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  .casos-hero__content {
+    padding: 1.5em;
+  }
+
+  .casos-hero__h1 {
+    font-size: calc(3.5vw + 3.5dvh);
+  }
+
+  .casos-hero__nav {
+    gap: 0.4em;
+    padding: 0.6em;
+  }
+
+  .casos-hero__thumb {
+    width: 3em;
+    height: 3em;
+  }
+
+  .casos-hero__thumb-label {
+    font-size: 0.45rem;
+  }
+
+  .casos-hero__caption h2 {
+    font-size: 1.1rem;
+  }
+
+  .casos-hero__caption p {
+    font-size: 0.82rem;
+  }
+
+  .casos-hero__captions {
+    min-height: 4.5em;
+  }
+
+  .casos-gallery__grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .casos-cta {
+    padding-block: 4rem;
+  }
+
+  /* Loader adjustments for mobile */
+  .casos-loader {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .casos-hero__h1 {
+    font-size: calc(3vw + 3dvh);
+    letter-spacing: -0.03em;
+  }
+
+  .casos-hero__thumb {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .casos-hero__caption h2 {
+    font-size: 0.95rem;
+  }
+
+  .casos-hero__caption p {
+    font-size: 0.78rem;
+    max-width: 90%;
+  }
+
+  .casos-loader {
+    font-size: 3vw;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .casos-hero__slide,
+  .casos-hero__slide-img,
+  .casos-hero__thumb,
+  .casos-hero__thumb-img,
+  .casos-hero__caption,
+  .casos-gallery__card,
+  .casos-gallery__img,
+  .casos-gallery__overlay,
+  .casos-gallery__overlay h3,
+  .casos-gallery__overlay p {
+    transition: none !important;
+  }
+}

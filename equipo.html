@@ -1,0 +1,626 @@
+﻿<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="El factor humano detrás de la Inteligencia Artificial. Conoce a los líderes de proyecto de DesafIA." />
+  <title>Equipo - DesafIA</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Configuration to lock exact Brand Colors -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#4B0082',     /* Primary Dark */
+              blue: '#4169E1',     /* Primary Blue */
+              cyan: '#00BFFF',     /* Accent Cyan */
+              lavender: '#CCCCFF', /* Light Lavender */
+              white: '#FFFFFF',
+              subtle: '#F8FAFC'    /* Fondo sutil */
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Utilities */
+    .text-gradient-logo {
+      background: linear-gradient(to right, #4B0082, #00BFFF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .text-gradient-title {
+      background: linear-gradient(135deg, #4B0082, #4169E1, #00BFFF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .bg-gradient-cta {
+      background: linear-gradient(135deg, #4B0082, #4169E1);
+    }
+    
+    /* Hero Patterns */
+    .dot-pattern {
+      background-image: radial-gradient(rgba(75, 0, 130, 0.1) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    
+    /* Glassmorphism */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    
+    /* Particle canvas */
+    #particle-canvas {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgb(10, 10, 50) 0%, rgb(60, 10, 60) 100%);
+      pointer-events: none;
+    }
+
+    /* Team summary */
+    .team-summary {
+      position: relative;
+      margin-top: 1.5rem;
+      isolation: isolate;
+    }
+
+    .team-summary--blue {
+      --summary-accent: #00BFFF;
+      --summary-secondary: #4169E1;
+      --summary-shadow: rgba(65, 105, 225, 0.18);
+      --summary-glow: rgba(0, 191, 255, 0.12);
+      --summary-line: rgba(65, 105, 225, 0.32);
+      --summary-border: rgba(65, 105, 225, 0.16);
+      --summary-border-hover: rgba(65, 105, 225, 0.28);
+      --summary-ring: rgba(0, 191, 255, 0.12);
+      --summary-ring-hover: rgba(0, 191, 255, 0.18);
+      --summary-glow-strong: rgba(0, 191, 255, 0.32);
+      --summary-shadow-hover: rgba(65, 105, 225, 0.22);
+    }
+
+    .team-summary--violet {
+      --summary-accent: #4B0082;
+      --summary-secondary: #4169E1;
+      --summary-shadow: rgba(75, 0, 130, 0.18);
+      --summary-glow: rgba(75, 0, 130, 0.12);
+      --summary-line: rgba(75, 0, 130, 0.32);
+      --summary-border: rgba(75, 0, 130, 0.16);
+      --summary-border-hover: rgba(75, 0, 130, 0.28);
+      --summary-ring: rgba(75, 0, 130, 0.12);
+      --summary-ring-hover: rgba(75, 0, 130, 0.18);
+      --summary-glow-strong: rgba(75, 0, 130, 0.34);
+      --summary-shadow-hover: rgba(75, 0, 130, 0.22);
+    }
+
+    .team-summary::before {
+      content: "";
+      position: absolute;
+      top: 1rem;
+      left: 12%;
+      right: 0;
+      height: 10rem;
+      border-radius: 999px;
+      background: radial-gradient(circle, var(--summary-glow) 0%, transparent 72%);
+      filter: blur(26px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .team-summary-badge {
+      position: relative;
+      z-index: 1;
+    }
+
+    .team-summary-list {
+      position: relative;
+      z-index: 1;
+      margin-top: 1.25rem;
+      display: grid;
+      gap: 0.95rem;
+      padding-left: 1.85rem;
+    }
+
+    .team-summary-list::before {
+      content: "";
+      position: absolute;
+      top: 0.9rem;
+      bottom: 0.9rem;
+      left: 0.72rem;
+      width: 1px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--summary-line), rgba(255, 255, 255, 0));
+      opacity: 0.5;
+    }
+
+    .team-summary-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.45rem;
+      border: 1px solid var(--summary-border);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.82)),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+      padding: 1.05rem 1.35rem 1.05rem 1.75rem;
+      box-shadow:
+        0 16px 34px rgba(15, 23, 42, 0.06),
+        0 8px 22px var(--summary-shadow);
+      opacity: 0;
+      transform: translate3d(0, 24px, 0) scale(0.98);
+      filter: blur(8px);
+      transition:
+        opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+      transition-delay: var(--feature-delay, 0ms);
+      will-change: transform, opacity, filter;
+    }
+
+    .team-summary-item::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0.78rem;
+      width: 0.82rem;
+      height: 0.82rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--summary-accent), var(--summary-secondary));
+      box-shadow:
+        0 0 0 6px var(--summary-ring),
+        0 0 28px var(--summary-glow-strong);
+      transform: translate(-50%, -50%) scale(0.8);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .team-summary-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        115deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.15) 32%,
+        rgba(255, 255, 255, 0.65) 48%,
+        transparent 64%
+      );
+      transform: translateX(-130%);
+      opacity: 0;
+      transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .team-summary-item.is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      filter: blur(0);
+    }
+
+    .team-summary-item:hover {
+      transform: translate3d(10px, 0, 0);
+      border-color: var(--summary-border-hover);
+      box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.08),
+        0 10px 28px var(--summary-shadow-hover);
+    }
+
+    .team-summary-item:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow:
+        0 0 0 8px var(--summary-ring-hover),
+        0 0 34px var(--summary-glow-strong);
+    }
+
+    .team-summary-item:hover::after {
+      transform: translateX(125%);
+      opacity: 1;
+    }
+
+    .team-summary-text {
+      position: relative;
+      z-index: 1;
+      display: block;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .team-summary-item {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        transition: box-shadow 0.2s ease, border-color 0.2s ease;
+      }
+
+      .team-summary-item::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .team-summary-list {
+        padding-left: 1.4rem;
+      }
+
+      .team-summary-item {
+        padding: 1rem 1.1rem 1rem 1.45rem;
+      }
+
+      .team-summary-item:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 font-sans antialiased overflow-x-hidden selection:bg-brand-cyan/30">
+
+  <!-- ==============================================
+       A. BARRA DE NAVEGACIÓN (HEADER)
+       ============================================== -->
+  <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100/50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="text-2xl font-black tracking-tight text-gradient-logo">DesafIA</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex gap-10 items-center font-semibold text-[15px]">
+        <!-- Active Link: Equipo -->
+        <a href="equipo.html" class="text-brand-dark relative">
+          Equipo
+          <span class="absolute -bottom-1.5 left-0 w-full h-[3px] bg-brand-dark rounded-t-full"></span>
+        </a>
+
+        <a href="formacion.html" class="text-gray-500 hover:text-brand-blue transition-colors">Programas</a>
+        <a href="casos.html" class="text-gray-500 hover:text-brand-blue transition-colors">Casos</a>
+        <a href="index.html#contacto" class="text-gray-500 hover:text-brand-blue transition-colors">Contactar</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <a href="https://calendly.com/andres-somosdesafia" target="_blank" rel="noopener" class="inline-flex items-center justify-center text-white px-7 py-2.5 rounded-full font-bold text-[15px] shadow-[0_4px_14px_rgba(75,0,130,0.35)] hover:-translate-y-0.5 transition-all" style="background: linear-gradient(135deg, #4B0082, #4169E1);">
+          Agendar reunión
+        </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="md:hidden text-gray-900 focus:outline-none" aria-label="Abrir menú">
+        <svg width="24" height="24" fill="none" class="w-7 h-7" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==============================================
+       B. SECCIÓN HERO
+       ============================================== -->
+  <section class="relative min-h-[90vh] md:min-h-[100vh] flex items-center overflow-hidden">
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas" class="absolute inset-0 z-0"></canvas>
+    
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10 pt-20">
+      <h1 class="text-[3.25rem] md:text-[5rem] font-black tracking-tight leading-[1.05] text-white drop-shadow-lg">
+        El factor humano detrás de la <br class="hidden md:block"/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ccccff] to-brand-cyan">Inteligencia Artificial</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       D. NUESTRO EQUIPO
+       ============================================== -->
+  <section id="equipo-section" class="py-32 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 md:mb-20">
+        <h2 class="text-4xl md:text-[3rem] font-black text-gray-900 tracking-tight">Equipo</h2>
+      </div>
+
+      <div class="flex flex-col gap-24 md:gap-28">
+        <!-- Perfil 1: Andrés Hidalgo -->
+        <article class="grid gap-12 md:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] md:items-start lg:gap-20">
+          <div class="w-full max-w-[30rem]">
+            <div class="mb-5">
+              <h3 class="text-3xl md:text-4xl lg:text-[3.25rem] font-black text-gray-900 tracking-tight">Andrés Hidalgo</h3>
+            </div>
+            <div class="relative w-full aspect-square rounded-[3rem] bg-brand-subtle overflow-hidden shadow-2xl shadow-brand-dark/15 group">
+              <div class="absolute inset-0 bg-brand-dark/5 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+              <img src="assets/imagenes/Andres.png" alt="Andrés Hidalgo" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+
+          <div class="w-full max-w-[38rem] md:pt-1">
+            <div class="w-full border-b border-gray-100 pb-5">
+              <p class="max-w-xl text-sm font-bold uppercase tracking-[0.14em] leading-relaxed text-brand-blue">
+                Director de DesafIA | Consultor en Transformación Digital & IA
+              </p>
+            </div>
+
+            <div class="team-summary team-summary--blue">
+              <div class="team-summary-badge inline-flex items-center gap-2 rounded-full border border-brand-blue/10 bg-white px-4 py-2 text-[12px] font-extrabold uppercase tracking-[0.18em] text-brand-blue shadow-sm">
+                <span class="h-2 w-2 rounded-full bg-brand-cyan"></span>
+                Resumen ejecutivo
+              </div>
+
+              <ul class="team-summary-list">
+                <li class="team-summary-item" data-summary-reveal style="--feature-delay: 0ms;">
+                  <p class="team-summary-text text-[15px] md:text-[16px] font-semibold leading-relaxed text-gray-700">Director de DesafIA</p>
+                </li>
+                <li class="team-summary-item" data-summary-reveal style="--feature-delay: 90ms;">
+                  <p class="team-summary-text text-[15px] md:text-[16px] font-semibold leading-relaxed text-gray-700">Ingeniero Civil Industrial UANDES</p>
+                </li>
+                <li class="team-summary-item" data-summary-reveal style="--feature-delay: 180ms;">
+                  <p class="team-summary-text text-[15px] md:text-[16px] font-semibold leading-relaxed text-gray-700">+15 años en transformación digital e IA</p>
+                </li>
+                <li class="team-summary-item" data-summary-reveal style="--feature-delay: 270ms;">
+                  <p class="team-summary-text text-[15px] md:text-[16px] font-semibold leading-relaxed text-gray-700">Experiencia en ENEX, EMPACK</p>
+                </li>
+                <li class="team-summary-item" data-summary-reveal style="--feature-delay: 360ms;">
+                  <p class="team-summary-text text-[15px] md:text-[16px] font-semibold leading-relaxed text-gray-700">Profesor en UANDES</p>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://www.linkedin.com/in/andreshidalgog/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-3 self-start rounded-full bg-brand-blue px-8 py-4 text-[15px] font-bold text-white shadow-[0_8px_20px_rgba(65,105,225,0.3)] transition-all duration-300 hover:-translate-y-1 hover:bg-brand-dark hover:shadow-[0_12px_25px_rgba(75,0,130,0.4)]">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>Conectar en LinkedIn</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Perfil 2: Manuel Céspedes -->
+        <article class="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] md:items-start lg:gap-20">
+          <div class="order-2 w-full max-w-[38rem] md:order-1 md:pt-1">
+            <div class="w-full border-b border-gray-100 pb-5">
+              <p class="max-w-xl text-sm font-bold uppercase tracking-[0.14em] leading-relaxed text-brand-blue">
+                Fundador de Altitud 100K | Director de Proyectos de IA Aplicada
+              </p>
+            </div>
+
+            <div class="team-summary team-summary--violet">
+              <div class="team-summary-badge inline-flex items-center gap-2 rounded-full border border-brand-dark/10 bg-white px-4 py-2 text-[12px] font-extrabold uppercase tracking-[0.18em] text-brand-dark shadow-sm">
+                <span class="h-2 w-2 rounded-full bg-brand-blue"></span>
+                Resumen ejecutivo
+              </div>
+
+              <ul class="team-summary-list">
+                <li class="team-summary-item" data-summary-reveal style="--feature-delay: 0ms;">
+                  <p class="team-summary-text text-[15px] md:text-[16px] font-semibold leading-relaxed text-gray-700">Fundador de Altitud 100K y Director de Proyectos de IA Aplicada</p>
+                </li>
+                <li class="team-summary-item" data-summary-reveal style="--feature-delay: 90ms;">
+                  <p class="team-summary-text text-[15px] md:text-[16px] font-semibold leading-relaxed text-gray-700">Ingeniería, astronomía y MBA con foco en tecnología y gestión</p>
+                </li>
+                <li class="team-summary-item" data-summary-reveal style="--feature-delay: 180ms;">
+                  <p class="team-summary-text text-[15px] md:text-[16px] font-semibold leading-relaxed text-gray-700">Desarrolla soluciones de IA aplicada para automatización y productividad</p>
+                </li>
+                <li class="team-summary-item" data-summary-reveal style="--feature-delay: 270ms;">
+                  <p class="team-summary-text text-[15px] md:text-[16px] font-semibold leading-relaxed text-gray-700">Experiencia en I+D, análisis 3D y soporte a decisiones</p>
+                </li>
+                <li class="team-summary-item" data-summary-reveal style="--feature-delay: 360ms;">
+                  <p class="team-summary-text text-[15px] md:text-[16px] font-semibold leading-relaxed text-gray-700">Capitán del USM CubeSat Team y mentor en iniciativas STEM</p>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://www.linkedin.com/in/cespedes-araya-manuel/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-3 self-start rounded-full bg-brand-blue px-8 py-4 text-[15px] font-bold text-white shadow-[0_8px_20px_rgba(65,105,225,0.3)] transition-all duration-300 hover:-translate-y-1 hover:bg-brand-dark hover:shadow-[0_12px_25px_rgba(75,0,130,0.4)]">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>Conectar en LinkedIn</span>
+            </a>
+          </div>
+
+          <div class="order-1 w-full max-w-[30rem] md:order-2 md:justify-self-end">
+            <div class="mb-5 md:text-right">
+              <h3 class="text-3xl md:text-4xl lg:text-[3.25rem] font-black text-gray-900 tracking-tight">Manuel Céspedes</h3>
+            </div>
+            <div class="relative w-full aspect-square rounded-[3rem] bg-brand-subtle overflow-hidden shadow-2xl shadow-brand-blue/15 group">
+              <div class="absolute inset-0 bg-brand-blue/5 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+              <img src="assets/imagenes/Manuel.png" alt="Manuel Céspedes" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       E. CALL TO ACTION (CTA)
+       ============================================== -->
+  <section class="py-28 bg-gradient-cta text-white text-center relative overflow-hidden">
+    <!-- Overlay Pattern -->
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-[0.25]"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <h2 class="text-4xl md:text-[3.25rem] font-black mb-6 tracking-tight leading-tight">
+        ¿Hablamos del futuro de tu empresa?
+      </h2>
+      <p class="text-[1.125rem] md:text-xl text-brand-lavender max-w-2xl mx-auto mb-12 leading-relaxed">
+        Nuestro equipo está listo para diseñar un plan de adopción de IA a la medida de tus desafíos operativos.
+      </p>
+      <a href="mailto:andres@somosdesafia.cl" class="group inline-flex items-center justify-center bg-brand-cyan text-gray-900 px-10 py-4 rounded-full font-black text-[1.1rem] hover:bg-white hover:text-brand-dark transition-all hover:-translate-y-1 shadow-[0_0_30px_rgba(0,191,255,0.4)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)]">
+        Agendar una reunión
+      </a>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       F. FOOTER
+       ============================================== -->
+  <footer class="bg-[#111118] text-gray-400 py-10 border-t border-white/5 text-center text-[15px] font-medium">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center gap-2 md:flex-row md:gap-4 text-gray-500">
+      <p>&copy; 2026 DesafIA. Todos los derechos reservados.</p>
+      <span class="hidden md:inline">|</span>
+      <a href="mailto:andres@somosdesafia.cl" class="hover:text-white transition-colors">andres@somosdesafia.cl</a>
+    </div>
+  </footer>
+
+  <script>
+    // modified version of random-normal
+    function normalPool(o){var r=0;do{var a=Math.round(normal({mean:o.mean,dev:o.dev}));if(a<o.pool.length&&a>=0)return o.pool[a];r++}while(r<100)}function randomNormal(o){if(o=Object.assign({mean:0,dev:1,pool:[]},o),Array.isArray(o.pool)&&o.pool.length>0)return normalPool(o);var r,a,n,e,l=o.mean,t=o.dev;do{r=(a=2*Math.random()-1)*a+(n=2*Math.random()-1)*n}while(r>=1);return e=a*Math.sqrt(-2*Math.log(r)/r),t*e+l}
+
+    const NUM_PARTICLES = 600;
+    const PARTICLE_SIZE = 0.5; // View heights
+    const SPEED = 20000; // Milliseconds
+
+    let particles = [];
+
+    function rand(low, high) {
+      return Math.random() * (high - low) + low;
+    }
+
+    function createParticle(canvas) {
+      const colour = {
+        r: 255,
+        g: randomNormal({ mean: 125, dev: 20 }),
+        b: 50,
+        a: rand(0, 1),
+      };
+      return {
+        x: -2,
+        y: -2,
+        diameter: Math.max(0, randomNormal({ mean: PARTICLE_SIZE, dev: PARTICLE_SIZE / 2 })),
+        duration: randomNormal({ mean: SPEED, dev: SPEED * 0.1 }),
+        amplitude: randomNormal({ mean: 16, dev: 2 }),
+        offsetY: randomNormal({ mean: 0, dev: 10 }),
+        arc: Math.PI * 2,
+        startTime: performance.now() - rand(0, SPEED),
+        colour: `rgba(${colour.r}, ${colour.g}, ${colour.b}, ${colour.a})`,
+      }
+    }
+
+    function moveParticle(particle, canvas, time) {
+      const progress = ((time - particle.startTime) % particle.duration) / particle.duration;
+      return {
+        ...particle,
+        x: progress,
+        y: ((Math.sin(progress * particle.arc) * particle.amplitude) + particle.offsetY),
+      };
+    }
+
+    function drawParticle(particle, canvas, ctx) {
+      const vh = canvas.height / 100;
+
+      ctx.fillStyle = particle.colour;
+      ctx.beginPath();
+      ctx.ellipse(
+        particle.x * canvas.width,
+        particle.y * vh + (canvas.height / 2),
+        particle.diameter * vh,
+        particle.diameter * vh,
+        0,
+        0,
+        2 * Math.PI
+      );
+      ctx.fill();
+    }
+
+    function draw(time, canvas, ctx) {
+      // Move particles
+      particles.forEach((particle, index) => {
+        particles[index] = moveParticle(particle, canvas, time);
+      })
+
+      // Clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw the particles
+      particles.forEach((particle) => {
+        drawParticle(particle, canvas, ctx);
+      })
+
+      // Schedule next frame
+      requestAnimationFrame((time) => draw(time, canvas, ctx));
+    }
+
+    function initializeCanvas() {
+      let canvas = document.getElementById('particle-canvas');
+      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+      let ctx = canvas.getContext("2d");
+
+      window.addEventListener('resize', () => {
+        canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+        canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+        ctx = canvas.getContext("2d");
+      })
+
+      return [canvas, ctx];
+    }
+
+    function startAnimation() {
+      const canvasEl = document.getElementById('particle-canvas');
+      if (!canvasEl) return;
+      const [canvas, ctx] = initializeCanvas();
+
+      // Create a bunch of particles
+      for (let i = 0; i < NUM_PARTICLES; i++) {
+        particles.push(createParticle(canvas));
+      }
+      
+      requestAnimationFrame((time) => draw(time, canvas, ctx));
+    };
+
+    function startSummaryAnimations() {
+      const items = document.querySelectorAll('[data-summary-reveal]');
+      if (!items.length) return;
+
+      if (!('IntersectionObserver' in window)) {
+        items.forEach((item) => item.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.16,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      items.forEach((item) => observer.observe(item));
+    }
+
+    // Start animation when document is loaded
+    (function () {
+      if (document.readyState !== 'loading') {
+        startAnimation();
+        startSummaryAnimations();
+      } else {
+        document.addEventListener('DOMContentLoaded', () => {
+          startAnimation();
+          startSummaryAnimations();
+        })
+      }
+    }());
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
